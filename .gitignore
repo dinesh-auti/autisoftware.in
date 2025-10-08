@@ -6,6 +6,9 @@ resources/_gen/
 .hugo_build.lock
 hugo_stats.json
 
+# Themes (if not using submodules, uncomment next line)
+# themes/
+
 # Node modules (if using npm/yarn for asset processing)
 node_modules/
 npm-debug.log*
