@@ -1,0 +1,13 @@
+################################### English language #####################################
+[en]
+languageName = "EN"
+languageCode = "en-US"
+contentDir = "content/english"
+weight = 1
+[en.params]
+########### footer content ##########
+footer_menu_left = "Services"
+footer_menu_middle = "Solutions"
+footer_menu_right = "Support"
+footer_content = "Accelerate your software delivery with expert SRE consulting. CI/CD automation, cost optimization, and reliable infrastructure."
+

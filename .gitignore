@@ -1,0 +1,67 @@
+# Hugo build files
+public/
+resources/_gen/
+
+# Hugo cache
+.hugo_build.lock
+hugo_stats.json
+
+# Node modules (if using npm/yarn for asset processing)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Build tools
+dist/
+build/
+.cache/
+
+# Netlify
+.netlify/
+
+# Vercel
+.vercel
+
+# Local development
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Hugo modules
+go.sum
