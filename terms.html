@@ -63,7 +63,7 @@
     <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
       <div>
         <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] text-ink">Auti</a>
-        <p class="mt-1 text-xs text-ink-muted">© 2025 Auti Software Consultancy Services</p>
+        <p class="mt-1 text-xs text-ink-muted">© <span id="footer-year"></span> Auti Software Consultancy Services</p>
       </div>
       <nav class="flex flex-wrap items-center gap-5">
         <a href="/work.html"    class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Work</a>
@@ -72,9 +72,12 @@
         <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
         <a href="/privacy-policy.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Privacy</a>
         <a href="/terms.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Terms</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <span class="text-xs text-ink-muted">India 🇮🇳</span>
       </nav>
     </div>
   </footer>
 
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
