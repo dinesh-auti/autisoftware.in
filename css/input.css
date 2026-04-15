@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* ─── Self-hosted Inter Variable (body text) ─── */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url('../fonts/inter/InterVariable.woff2') format('woff2');
+}
+
+/* ─── Design Tokens ─── */
+@theme {
+  --font-sans:    'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Light palette */
+  --color-canvas:      #F8F7F4;
+  --color-ink:         #191714;
+  --color-ink-muted:   #6B6660;
+  --color-brand:       #B45309;
+  --color-brand-tint:  #FEF3C7;
+  --color-hairline:    #E8E5E0;
+
+  /* Dark sections */
+  --color-void:        #1C1410;
+  --color-void-mid:    #251B13;
+  --color-void-text:   #F5F2EC;
+  --color-void-muted:  #9A8A7E;
+  --color-void-brand:  #F59E0B;
+}
+
+/* ─── Base ─── */
+@layer base {
+  html {
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2 {
+    font-family: var(--font-heading);
+  }
+
+  /* Amber top-bar on every page header */
+  header {
+    border-top: 2px solid var(--color-brand);
+  }
+
+  ::selection {
+    background-color: var(--color-brand);
+    color: #fff;
+  }
+
+  /* ─── Grain texture overlay ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    opacity: 0.04;
+  }
+}
+
+/* ─── Components ─── */
+@layer components {
+  /* Animated underline for nav list links */
+  header nav ul a {
+    position: relative;
+    padding-bottom: 2px;
+  }
+  header nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  header nav ul a:hover::after {
+    width: 100%;
+  }
+}
+
+/* ─── Scroll Animation ─── */
+@layer utilities {
+  .fade-up {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stagger > .fade-up:nth-child(2) { transition-delay: 0.08s; }
+  .stagger > .fade-up:nth-child(3) { transition-delay: 0.16s; }
+  .stagger > .fade-up:nth-child(4) { transition-delay: 0.24s; }
+}
+
+/* ─── Typewriter cursor blink ─── */
+@keyframes twBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

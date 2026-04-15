@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Auti</title>
+  <meta name="description" content="Selected engagements from Auti — product, backend, ML, and platform engineering work for startups and scaling companies.">
+  <link rel="preload" href="/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body class="bg-canvas text-ink">
+
+  <!-- ─── NAV ─── -->
+  <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-hairline">
+    <nav class="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] hover:opacity-70 transition-opacity duration-150"><span class="text-brand">Au</span><span class="text-ink">ti</span></a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="/work.html"    class="text-sm text-ink font-medium">Work</a></li>
+        <li><a href="/about.html"   class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">About</a></li>
+        <li><a href="/contact.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="/contact.html" class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-brand border border-brand/40 px-4 py-2 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200">
+          Get in touch
+        </a>
+        <button id="menu-toggle" class="md:hidden p-2 -mr-1 text-ink-muted hover:text-ink" aria-label="Toggle menu">
+          <svg id="icon-open"  class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-hairline bg-canvas">
+      <div class="max-w-[1100px] mx-auto px-6 py-5 flex flex-col gap-1">
+        <a href="/work.html"    class="text-sm text-ink font-medium py-2.5 border-b border-hairline">Work</a>
+        <a href="/about.html"   class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">About</a>
+        <a href="/contact.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Contact</a>
+        <a href="/contact.html" class="mt-3 inline-flex items-center justify-center text-sm font-medium text-brand border border-brand/40 px-4 py-2.5 rounded-[3px] hover:bg-brand hover:text-white transition-all duration-200">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── PAGE HEADER ─── -->
+    <section class="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-12">
+      <div class="max-w-2xl fade-up">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">Selected work</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-[-0.02em] leading-[1.1] text-ink">
+          Problems we've been trusted with.
+        </h1>
+        <p class="mt-6 text-lg text-ink-muted leading-relaxed max-w-lg">
+          Most of our work is confidential. Where clients have given permission — or where we can share without attribution — we document the problem and what we built.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── WORK LIST ─── -->
+    <section class="max-w-[1100px] mx-auto px-6 pb-20 md:pb-28">
+      <div class="border-t border-hairline">
+
+        <!-- Work item 1 -->
+        <article class="fade-up border-b border-hairline py-10 md:py-12 grid md:grid-cols-[240px_1fr] gap-6 md:gap-16">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Fintech · Series B</span>
+            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">ML Inference Pipeline</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">ML Systems</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Platform</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The problem</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                A production ML model powering fraud detection was serving predictions through a brittle, monolithic inference service. As request volume grew, p99 latency ballooned past 4 seconds. Deploys took a full afternoon and required manual rollbacks on roughly 30% of releases.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">What we built</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                We rebuilt the serving layer as a purpose-built inference service with model versioning, canary rollouts, and structured observability. Introduced async pre-processing to eliminate the main bottleneck. Rewrote the deploy pipeline with automated rollback triggers tied to latency SLOs.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Outcome</p>
+              <p class="text-[15px] text-ink leading-relaxed font-[450]">
+                p99 latency dropped from 4.2s to under 900ms. Deploys went from afternoon events to 12-minute automated runs. The ML team now owns and maintains the service independently.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work item 2 -->
+        <article class="fade-up border-b border-hairline py-10 md:py-12 grid md:grid-cols-[240px_1fr] gap-6 md:gap-16">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">E-commerce · Scale-up</span>
+            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">Platform Foundation</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Platform</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Reliability</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">DevOps</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The problem</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                A fast-growing e-commerce platform was deploying multiple times per week into a fragile, manually managed infrastructure. Each release took 45+ minutes, required two senior engineers on standby, and had a roughly 25% rollback rate. The team had stopped shipping features confidently.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">What we built</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                Migrated workloads to a Kubernetes-based deployment architecture with GitOps workflows, automated blue-green deploys, and comprehensive rollback triggers. Introduced environment parity between staging and production to eliminate "works on staging" issues. Built a shared internal platform library that standardised service configuration across 11 microservices.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Outcome</p>
+              <p class="text-[15px] text-ink leading-relaxed font-[450]">
+                Mean time to deploy dropped from 45 minutes to under 3. Rollback rate dropped to near zero. Within 60 days the engineering team was shipping 2x as many features with the same headcount.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- More work placeholder -->
+        <div class="fade-up py-10 md:py-12">
+          <div class="border border-dashed border-hairline rounded-sm px-8 py-10 text-center max-w-md mx-auto">
+            <p class="text-sm text-ink-muted">More case studies coming soon.</p>
+            <p class="mt-2 text-sm text-ink-muted">Most of our work is shared by referral.</p>
+            <a href="/contact.html" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-ink transition-colors duration-150 group">
+              Start a conversation
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section class="bg-void">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="max-w-xl fade-up">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-[-0.02em] text-void-text leading-tight">
+            Have a problem that looks like these?
+          </h2>
+          <p class="mt-5 text-[17px] text-void-muted leading-relaxed">
+            Tell us what you're dealing with. We'll respond with an honest take on whether and how we can help.
+          </p>
+          <a href="/contact.html" class="mt-8 inline-flex items-center gap-2 text-[15px] font-medium text-void-text border border-void-text/25 px-6 py-3 rounded-[3px] hover:border-void-brand hover:text-void-brand transition-all duration-200 group">
+            Get in touch
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-canvas border-t border-hairline">
+    <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+      <div>
+        <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] text-ink">Auti</a>
+        <p class="mt-1 text-xs text-ink-muted">© 2025 Auti Software Consultancy Services</p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5">
+        <a href="/work.html"           class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Work</a>
+        <a href="/about.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">About</a>
+        <a href="/contact.html"        class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Contact</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <a href="/privacy-policy.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Privacy</a>
+        <a href="/terms.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    toggle?.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

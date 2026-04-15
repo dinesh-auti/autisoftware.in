@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Auti</title>
+  <meta name="description" content="Auti is a founder-led boutique consultancy built on a network of senior engineers. Learn how we work and who we work with.">
+  <link rel="preload" href="/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body class="bg-canvas text-ink">
+
+  <!-- ─── NAV ─── -->
+  <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-hairline">
+    <nav class="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] hover:opacity-70 transition-opacity duration-150"><span class="text-brand">Au</span><span class="text-ink">ti</span></a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="/work.html"    class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Work</a></li>
+        <li><a href="/about.html"   class="text-sm text-ink font-medium">About</a></li>
+        <li><a href="/contact.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="/contact.html" class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-brand border border-brand/40 px-4 py-2 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200">
+          Get in touch
+        </a>
+        <button id="menu-toggle" class="md:hidden p-2 -mr-1 text-ink-muted hover:text-ink" aria-label="Toggle menu">
+          <svg id="icon-open"  class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-hairline bg-canvas">
+      <div class="max-w-[1100px] mx-auto px-6 py-5 flex flex-col gap-1">
+        <a href="/work.html"    class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Work</a>
+        <a href="/about.html"   class="text-sm text-ink font-medium py-2.5 border-b border-hairline">About</a>
+        <a href="/contact.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Contact</a>
+        <a href="/contact.html" class="mt-3 inline-flex items-center justify-center text-sm font-medium text-brand border border-brand/40 px-4 py-2.5 rounded-[3px] hover:bg-brand hover:text-white transition-all duration-200">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── PAGE HEADER ─── -->
+    <section class="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-20">
+      <div class="max-w-2xl fade-up">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">About</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-[-0.02em] leading-[1.1] text-ink">
+          Built for the work that actually matters.
+        </h1>
+        <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+          Auti is a boutique consultancy. We're small on purpose, selective by design, and senior across the board.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── FOUNDER STORY ─── -->
+    <section class="border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1fr_1.6fr] gap-12 md:gap-20">
+        <div class="fade-up">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">The founder</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Dinesh Auti</h2>
+          <p class="mt-2 text-sm text-ink-muted">Founder, Auti</p>
+          <div class="mt-8 w-16 h-[2px] bg-brand opacity-70 rounded-full"></div>
+        </div>
+        <div class="fade-up space-y-5 text-[17px] text-ink-muted leading-relaxed">
+          <p>
+            I started Auti after years of building platform infrastructure and reliability systems for product companies across fintech, e-commerce, and health tech. The patterns I kept seeing — systems that were expensive to run, brittle to change, and owned by no one — had almost nothing to do with the technology and everything to do with who was making the decisions.
+          </p>
+          <p>
+            Auti exists because good engineering requires judgment, not just execution. The boutique model gives me the freedom to do the work right: small focused teams, clear accountability, and outcomes that stick after the engagement ends.
+          </p>
+          <p>
+            I'm based out of Mumbai and work with companies globally. Every engagement has me directly involved — not managing from a distance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── THE MODEL ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-16 md:py-24">
+        <div class="fade-up mb-12">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">How we work</p>
+          <h2 class="text-3xl md:text-[36px] font-extrabold tracking-tight text-ink max-w-lg leading-[1.2]">
+            The team is built around the problem.
+          </h2>
+        </div>
+
+        <div class="stagger space-y-px bg-hairline border-t border-hairline">
+          <div class="fade-up bg-white px-6 md:px-0 py-8 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Discovery</span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-ink mb-2">We start by understanding the real problem.</h3>
+              <p class="text-sm text-ink-muted leading-relaxed">Most engagements begin with a brief scoping call. We want to understand what you're trying to accomplish, what's blocking you, and whether we're the right fit. If we're not, we'll say so.</p>
+            </div>
+          </div>
+          <div class="fade-up bg-white px-6 md:px-0 py-8 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Assembly</span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-ink mb-2">We assemble the right team from a trusted network.</h3>
+              <p class="text-sm text-ink-muted leading-relaxed">Depending on the engagement, I may bring in senior product managers, backend engineers, ML engineers, or platform specialists from a network I've built and trust. Everyone who works on your problem has done this type of work before.</p>
+            </div>
+          </div>
+          <div class="fade-up bg-white px-6 md:px-0 py-8 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Execution</span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-ink mb-2">We embed, build, and ship.</h3>
+              <p class="text-sm text-ink-muted leading-relaxed">We work alongside your team — not as a black box. The goal is always to leave your team in a stronger position than when we arrived: better systems, clearer ownership, and the knowledge to maintain it.</p>
+            </div>
+          </div>
+          <div class="fade-up bg-white px-6 md:px-0 py-8 grid md:grid-cols-[140px_1fr] gap-4 md:gap-10">
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Handoff</span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-ink mb-2">We hand off, we don't disappear.</h3>
+              <p class="text-sm text-ink-muted leading-relaxed">Every engagement ends with documentation, runbooks, and knowledge transfer. We consider an engagement successful only when your team can fully own what we built together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHAT WE DON'T DO ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-16 md:py-24">
+        <div class="max-w-2xl">
+          <div class="fade-up">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">What we're not</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-ink mb-8">
+              We're deliberate about what we take on.
+            </h2>
+          </div>
+          <div class="fade-up space-y-4">
+            <div class="flex gap-4 items-start">
+              <span class="mt-1 w-1.5 h-1.5 rounded-full bg-ink-muted flex-shrink-0"></span>
+              <p class="text-[15px] text-ink-muted leading-relaxed"><strong class="text-ink font-medium">Not staff augmentation.</strong> We don't place engineers at clients. We own the outcome of an engagement, not just the hours.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="mt-1 w-1.5 h-1.5 rounded-full bg-ink-muted flex-shrink-0"></span>
+              <p class="text-[15px] text-ink-muted leading-relaxed"><strong class="text-ink font-medium">Not a full-service agency.</strong> We work on focused, high-stakes engineering and product problems. We don't do brand work, SEO, or digital marketing.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="mt-1 w-1.5 h-1.5 rounded-full bg-ink-muted flex-shrink-0"></span>
+              <p class="text-[15px] text-ink-muted leading-relaxed"><strong class="text-ink font-medium">Not volume-focused.</strong> We take on 2–3 engagements at a time. That's a deliberate constraint that lets us do the work well.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section class="bg-void">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="max-w-xl fade-up">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-[-0.02em] text-void-text leading-tight">
+            Ready to work together?
+          </h2>
+          <p class="mt-5 text-[17px] text-void-muted leading-relaxed">
+            Tell us about your problem. If we're a good fit, we'll respond within 48 hours.
+          </p>
+          <a href="/contact.html" class="mt-8 inline-flex items-center gap-2 text-[15px] font-medium text-void-text border border-void-text/25 px-6 py-3 rounded-[3px] hover:border-void-brand hover:text-void-brand transition-all duration-200 group">
+            Start a conversation
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-canvas border-t border-hairline">
+    <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+      <div>
+        <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] text-ink">Auti</a>
+        <p class="mt-1 text-xs text-ink-muted">© 2025 Auti Software Consultancy Services</p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5">
+        <a href="/work.html"           class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Work</a>
+        <a href="/about.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">About</a>
+        <a href="/contact.html"        class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Contact</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <a href="/privacy-policy.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Privacy</a>
+        <a href="/terms.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    toggle?.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
