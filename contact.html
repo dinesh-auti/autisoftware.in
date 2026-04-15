@@ -86,18 +86,18 @@
 
         <!-- Right: form -->
         <div class="fade-up">
-          <div id="form-success" class="hidden rounded-[3px] border border-green-200 bg-green-50 px-5 py-4 mb-6">
-            <p class="text-sm font-medium text-green-800">Message sent — we'll be in touch within 48 hours.</p>
+          <div id="form-success" class="hidden">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">Message sent</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-[-0.02em] leading-[1.15] text-ink">We'll be in touch.</h2>
+            <p class="mt-5 text-[15px] text-ink-muted leading-relaxed">Thanks for reaching out. We read every message and typically respond within 48 hours.</p>
+            <div class="mt-8 pt-6 border-t border-hairline">
+              <p class="text-xs text-ink-muted">In the meantime, you can reach us directly at <a href="mailto:info@autisoftware.in" class="text-brand hover:text-ink transition-colors duration-150">info@autisoftware.in</a></p>
+            </div>
           </div>
           <form
             id="contact-form"
-            action="https://formsubmit.co/info@autisoftware.in"
-            method="POST"
             class="space-y-6"
           >
-            <input type="hidden" name="_next" value="https://autisoftware.in/contact.html?sent=true">
-            <input type="hidden" name="_subject" value="New enquiry via autisoftware.in">
-            <input type="hidden" name="_captcha" value="false">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label for="name" class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">
@@ -176,7 +176,7 @@
             <div class="pt-2">
               <button
                 type="submit"
-                class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group"
+                class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group" style="cursor:pointer"
               >
                 Send message
                 <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,10 +224,37 @@
       iconOpen.classList.toggle('hidden', !isOpen);
       iconClose.classList.toggle('hidden', isOpen);
     });
-    if (new URLSearchParams(window.location.search).get('sent') === 'true') {
-      document.getElementById('form-success').classList.remove('hidden');
-      document.getElementById('contact-form').classList.add('hidden');
-    }
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const data = new FormData(form);
+      data.append('_subject', 'New enquiry via autisoftware.in');
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/info@autisoftware.in', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data,
+        });
+        if (res.ok) {
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+        } else {
+          throw new Error();
+        }
+      } catch {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+        alert('Something went wrong — please email us directly at info@autisoftware.in');
+      }
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
