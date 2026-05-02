@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Execution Studio for SMEs — Auti</title>
+  <meta name="description" content="AI Execution Studio for SMEs. Auti helps growing businesses use AI practically to ship sales assets, workflow automation, internal tools, and software faster.">
+  <meta property="og:title" content="AI Execution Studio for SMEs — Auti">
+  <meta property="og:description" content="AI Execution Studio for SMEs. Auti helps growing businesses use AI practically to ship sales assets, workflow automation, internal tools, and software faster.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autisoftware.in/sme-ai.html">
+  <link rel="preload" href="/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body class="bg-canvas text-ink">
+
+  <!-- ─── NAV ─── -->
+  <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-hairline">
+    <nav class="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+
+      <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] hover:opacity-70 transition-opacity duration-150">
+        <span class="text-brand">Au</span><span class="text-ink">ti</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="/work.html"    class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Work</a></li>
+        <li><a href="/about.html"   class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">About</a></li>
+        <li><a href="/sme-ai.html" class="text-sm text-ink font-medium">For SMEs</a></li>
+        <li><a href="/contact.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="/contact.html" class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-brand border border-brand/40 px-4 py-2 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200">
+          Get in touch
+        </a>
+        <button id="menu-toggle" class="md:hidden p-2 -mr-1 text-ink-muted hover:text-ink" aria-label="Toggle menu">
+          <svg id="icon-open"  class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-hairline bg-canvas">
+      <div class="max-w-[1100px] mx-auto px-6 py-5 flex flex-col gap-1">
+        <a href="/work.html"    class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Work</a>
+        <a href="/about.html"   class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">About</a>
+        <a href="/sme-ai.html" class="text-sm text-ink font-medium py-2.5 border-b border-hairline">For SMEs</a>
+        <a href="/contact.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Contact</a>
+        <a href="/contact.html" class="mt-3 inline-flex items-center justify-center text-sm font-medium text-brand border border-brand/40 px-4 py-2.5 rounded-[3px] hover:bg-brand hover:text-white transition-all duration-200">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-24">
+      <div class="max-w-3xl">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-7">For SMEs and partner agencies</p>
+        <h1 class="text-[44px] md:text-[64px] lg:text-[76px] font-bold tracking-[-0.02em] leading-[1.05] text-ink">
+          AI Execution Studio for <span class="text-brand">growing businesses.</span>
+        </h1>
+        <p class="mt-8 text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl">
+          We help SMEs turn messy sales material, repetitive workflows, and manual processes into usable AI-assisted assets, automations, and internal tools — without starting a large software project.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="#opportunity-form" class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group">
+            Book a 20-minute AI Opportunity Call
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#white-label" class="inline-flex items-center gap-2 text-[15px] font-medium text-ink border border-ink/25 px-6 py-3 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200 group">
+            Partner with us white-label
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROBLEM ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">The problem</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Most businesses are curious about AI. Few know where to start.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            AI tools are powerful, but most businesses do not need another tool subscription or a generic AI strategy deck. They need someone who can understand their current process, identify where AI can create practical leverage, and ship something their team can actually use.
+          </p>
+        </div>
+
+        <div class="fade-up">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-5">Common problems we see</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Product and service information scattered across PDFs, WhatsApp, Excel, and old websites
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Slow proposal or quotation creation
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Inconsistent enquiry replies
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Weak catalogs, landing pages, or company profiles
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Repetitive admin work handled manually
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Internal data trapped in spreadsheets
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              No simple owner dashboard
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              No structured follow-up or handover process
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MAIN OFFER ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-14 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">The offer</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Start with a focused AI execution sprint.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            Instead of beginning with a large custom software project, we start with a focused sprint. The goal is to create one useful business asset, workflow, or prototype quickly — then decide what is worth improving next.
+          </p>
+        </div>
+
+        <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline">
+
+          <div class="fade-up bg-canvas p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-brand mb-4">Sprint 01</p>
+            <h3 class="text-xl font-bold text-ink mb-3 tracking-[-0.01em]">AI Sales Asset Sprint</h3>
+            <p class="text-sm text-ink-muted leading-relaxed mb-6">
+              Best for manufacturers, industrial suppliers, service businesses, consultants, and professional firms.
+            </p>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Deliverables may include</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Improved landing or service page</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Product or service catalog</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Company profile</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Proposal or quotation template</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>WhatsApp and email enquiry response templates</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Simple lead or enquiry tracker</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Handover session</li>
+            </ul>
+          </div>
+
+          <div class="fade-up bg-canvas p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-brand mb-4">Sprint 02</p>
+            <h3 class="text-xl font-bold text-ink mb-3 tracking-[-0.01em]">AI Workflow Sprint</h3>
+            <p class="text-sm text-ink-muted leading-relaxed mb-6">
+              Best for teams doing repetitive work across spreadsheets, documents, email, WhatsApp, or internal systems.
+            </p>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Deliverables may include</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Enquiry capture workflow</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Quotation or proposal draft generator</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Document-to-data workflow</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Reporting dashboard</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>CRM-lite process</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Internal knowledge assistant</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Repetitive admin automation</li>
+            </ul>
+          </div>
+
+          <div class="fade-up bg-canvas p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-brand mb-4">Sprint 03</p>
+            <h3 class="text-xl font-bold text-ink mb-3 tracking-[-0.01em]">AI Software Prototype Sprint</h3>
+            <p class="text-sm text-ink-muted leading-relaxed mb-6">
+              Best when a business has an internal tool idea, dashboard idea, or customer-facing product idea and wants to validate quickly.
+            </p>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Deliverables may include</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Clickable prototype</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Working MVP</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Admin panel</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Dashboard</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>API integration</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Technical architecture</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Next-step roadmap</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHITE-LABEL ─── -->
+    <section id="white-label" class="bg-white border-t border-hairline scroll-mt-20">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
+          <div class="fade-up">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">White-label</p>
+            <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+              For agencies, consultants, and business advisors.
+            </h2>
+          </div>
+          <div class="fade-up space-y-6">
+            <p class="text-lg text-ink-muted leading-relaxed">
+              If you already work with SMEs, we can act as your white-label AI execution partner. You keep the client relationship. We help with technical execution, AI-assisted delivery, workflow design, and software implementation.
+            </p>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Good fit for</p>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Web agencies</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Digital agencies</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>ERP and Tally consultants</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>CAs and business advisors</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>IT vendors</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Industrial consultants</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Local consultants serving SMEs</li>
+              </ul>
+            </div>
+            <a href="#opportunity-form" class="inline-flex items-center gap-2 text-[15px] font-medium text-ink border border-ink/25 px-6 py-3 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200 group">
+              Discuss a white-label partnership
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHY AUTI ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Why Auti</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Software-first. Practical. No AI hype.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed max-w-3xl">
+            Auti is not an AI training shop or a chatbot agency. We are a software consultancy using AI as an execution advantage. That means we focus on practical outcomes: better sales assets, cleaner workflows, useful dashboards, internal tools, and prototypes that can be maintained.
+          </p>
+        </div>
+
+        <div class="fade-up">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Senior software judgment
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Practical business outcomes over buzzwords
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              AI-assisted execution to move faster
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Clean handover and documentation
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Suitable for direct SME work and white-label partner delivery
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              No unnecessary large-platform rebuilds
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PACKAGES ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-14 max-w-2xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Packages</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Simple engagement models.
+          </h2>
+          <p class="mt-6 text-[15px] md:text-base text-ink-muted leading-relaxed">
+            Three ways to engage. Final scope and price are confirmed after a short opportunity call so we only quote what we can actually deliver.
+          </p>
+        </div>
+
+        <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline">
+
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12 flex flex-col">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Starting from</p>
+            <div class="text-[40px] md:text-[48px] font-extrabold text-brand leading-none tracking-[-0.03em] mb-6">₹29,000</div>
+            <h3 class="text-base font-bold text-ink mb-3">5-Day AI Execution Sprint</h3>
+            <p class="text-sm text-ink-muted leading-relaxed mb-6">
+              For one focused sales, workflow, or prototype problem. We scope, build, and hand over in five business days.
+            </p>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Typical outputs</p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Sales page, catalog, or proposal template</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Enquiry reply and follow-up templates</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Simple lead or workflow tracker</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Lightweight dashboard or prototype</li>
+            </ul>
+            <a href="#opportunity-form" class="mt-auto inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-ink transition-colors duration-150 group">
+              Start a sprint
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12 flex flex-col">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Starting from</p>
+            <div class="text-[40px] md:text-[48px] font-extrabold text-brand leading-none tracking-[-0.03em] mb-6">₹75,000</div>
+            <h3 class="text-base font-bold text-ink mb-3">Workflow Automation Build</h3>
+            <p class="text-sm text-ink-muted leading-relaxed mb-6">
+              For businesses that need a more complete internal system, automation, or integration across multiple tools.
+            </p>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Typical outputs</p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Quotation or proposal workflow</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Excel, document, or email automation</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Internal dashboard</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>CRM-lite or operations workflow</li>
+            </ul>
+            <a href="#opportunity-form" class="mt-auto inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-ink transition-colors duration-150 group">
+              Plan a build
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12 flex flex-col">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Engagement</p>
+            <div class="text-[40px] md:text-[48px] font-extrabold text-brand leading-none tracking-[-0.03em] mb-6">Retainer</div>
+            <h3 class="text-base font-bold text-ink mb-3">Monthly AI Execution Partner</h3>
+            <p class="text-sm text-ink-muted leading-relaxed mb-6">
+              For businesses or agencies that need recurring execution support across sales assets, workflows, and software delivery.
+            </p>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Best fit</p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Best after one completed sprint</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Suitable for agency and white-label partnerships</li>
+              <li class="flex items-start gap-2.5 text-sm text-ink-muted"><span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>Useful for ongoing internal tool or automation roadmaps</li>
+            </ul>
+            <a href="#opportunity-form" class="mt-auto inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-ink transition-colors duration-150 group">
+              Discuss a retainer
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <p class="fade-up mt-12 text-sm text-ink-muted leading-relaxed text-center max-w-2xl mx-auto">
+          Each sprint is scoped around one clear outcome. We do not bundle ads, SEO, social media management, or open-ended custom software into fixed-price sprints.
+        </p>
+
+        <div class="fade-up mt-8 text-center">
+          <p class="text-[15px] text-ink-muted leading-relaxed max-w-xl mx-auto">
+            Not sure which package fits? Start with a 20-minute AI Opportunity Call — we'll review your current process and recommend where to start.
+          </p>
+          <a href="#opportunity-form" class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-ink transition-colors duration-150 group">
+            Book the call
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-2xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Frequently asked</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Questions we hear often.
+          </h2>
+        </div>
+
+        <div class="border-t border-hairline max-w-3xl">
+
+          <div class="fade-up border-b border-hairline py-8 md:py-10">
+            <h3 class="text-xl md:text-2xl font-bold text-ink tracking-[-0.01em] mb-3">Do you build AI chatbots?</h3>
+            <p class="text-[15px] text-ink-muted leading-relaxed">
+              Only when a chatbot is actually the right interface. We usually start with the workflow, data, and business outcome first.
+            </p>
+          </div>
+
+          <div class="fade-up border-b border-hairline py-8 md:py-10">
+            <h3 class="text-xl md:text-2xl font-bold text-ink tracking-[-0.01em] mb-3">Is this AI consulting?</h3>
+            <p class="text-[15px] text-ink-muted leading-relaxed">
+              Not in the traditional sense. We focus on execution — assets, workflows, prototypes, dashboards, and internal tools.
+            </p>
+          </div>
+
+          <div class="fade-up border-b border-hairline py-8 md:py-10">
+            <h3 class="text-xl md:text-2xl font-bold text-ink tracking-[-0.01em] mb-3">Do we need to know exactly what to build?</h3>
+            <p class="text-[15px] text-ink-muted leading-relaxed">
+              No. We can start with an opportunity review and identify one focused use case.
+            </p>
+          </div>
+
+          <div class="fade-up border-b border-hairline py-8 md:py-10">
+            <h3 class="text-xl md:text-2xl font-bold text-ink tracking-[-0.01em] mb-3">Can agencies work with Auti white-label?</h3>
+            <p class="text-[15px] text-ink-muted leading-relaxed">
+              Yes. We can support agencies and consultants as a behind-the-scenes execution partner.
+            </p>
+          </div>
+
+          <div class="fade-up border-b border-hairline py-8 md:py-10">
+            <h3 class="text-xl md:text-2xl font-bold text-ink tracking-[-0.01em] mb-3">Is this only for tech companies?</h3>
+            <p class="text-[15px] text-ink-muted leading-relaxed">
+              No. This offer is specifically designed for SMEs, service businesses, manufacturers, consultants, and professional firms.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── OPPORTUNITY REVIEW FORM ─── -->
+    <section id="opportunity-form" class="bg-white border-t border-hairline scroll-mt-20">
+      <div class="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-24 md:pb-32">
+        <div class="grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20">
+
+          <!-- Left: context -->
+          <div class="fade-up">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">AI Opportunity Review</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-[-0.02em] leading-[1.15] text-ink">
+              Tell us what you want AI to improve.
+            </h2>
+            <p class="mt-5 text-[15px] text-ink-muted leading-relaxed">
+              Share your context — sales material, workflow, internal process, or a specific idea. We reply within 48 hours with a practical take on where AI can help and what we would tackle first.
+            </p>
+
+            <div class="mt-10 space-y-6">
+              <div>
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">What happens next</p>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                    <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                    We read your enquiry and review your context
+                  </li>
+                  <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                    <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                    We reply within 48 hours with practical next steps
+                  </li>
+                  <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                    <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                    If it is a fit, we book a 20-minute opportunity call
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-6 border-t border-hairline">
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Direct email</p>
+                <a href="mailto:info@autisoftware.in" class="text-sm text-brand hover:text-ink transition-colors duration-150">
+                  info@autisoftware.in
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="fade-up">
+            <div id="sme-form-success" class="hidden">
+              <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">Request received</p>
+              <h2 class="text-3xl md:text-4xl font-extrabold tracking-[-0.02em] leading-[1.15] text-ink">We'll be in touch.</h2>
+              <p class="mt-5 text-[15px] text-ink-muted leading-relaxed">Thanks for the details. We read every enquiry and typically reply within 48 hours with a practical take on where to start.</p>
+              <div class="mt-8 pt-6 border-t border-hairline">
+                <p class="text-xs text-ink-muted">In the meantime, you can reach us directly at <a href="mailto:info@autisoftware.in" class="text-brand hover:text-ink transition-colors duration-150">info@autisoftware.in</a></p>
+              </div>
+            </div>
+
+            <form id="sme-form" class="space-y-6">
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="sme-name" class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">
+                    Name <span class="text-brand">*</span>
+                  </label>
+                  <input type="text" id="sme-name" name="name" required autocomplete="name" placeholder="Anya Sharma" class="w-full px-4 py-3 text-sm text-ink bg-white border border-hairline rounded-[3px] placeholder:text-ink-muted/50 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors duration-150">
+                </div>
+                <div>
+                  <label for="sme-company" class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">
+                    Company
+                  </label>
+                  <input type="text" id="sme-company" name="company" autocomplete="organization" placeholder="Acme Industries" class="w-full px-4 py-3 text-sm text-ink bg-white border border-hairline rounded-[3px] placeholder:text-ink-muted/50 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors duration-150">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="sme-phone" class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">
+                    Phone / WhatsApp
+                  </label>
+                  <input type="tel" id="sme-phone" name="phone" autocomplete="tel" placeholder="+91 ..." class="w-full px-4 py-3 text-sm text-ink bg-white border border-hairline rounded-[3px] placeholder:text-ink-muted/50 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors duration-150">
+                </div>
+                <div>
+                  <label for="sme-email" class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">
+                    Email <span class="text-brand">*</span>
+                  </label>
+                  <input type="email" id="sme-email" name="email" required autocomplete="email" placeholder="you@company.com" class="w-full px-4 py-3 text-sm text-ink bg-white border border-hairline rounded-[3px] placeholder:text-ink-muted/50 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors duration-150">
+                </div>
+              </div>
+
+              <div>
+                <label for="sme-business-type" class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">
+                  Business type
+                </label>
+                <input type="text" id="sme-business-type" name="business_type" placeholder="e.g. Manufacturing, Service business, Consultant, Agency" class="w-full px-4 py-3 text-sm text-ink bg-white border border-hairline rounded-[3px] placeholder:text-ink-muted/50 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors duration-150">
+              </div>
+
+              <fieldset>
+                <legend class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">
+                  What do you want to improve?
+                </legend>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="improve_areas" value="Sales material" class="w-4 h-4 accent-brand">
+                    Sales material
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="improve_areas" value="Enquiry follow-up" class="w-4 h-4 accent-brand">
+                    Enquiry follow-up
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="improve_areas" value="Quotation/proposal process" class="w-4 h-4 accent-brand">
+                    Quotation / proposal process
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="improve_areas" value="Internal reporting" class="w-4 h-4 accent-brand">
+                    Internal reporting
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="improve_areas" value="Repetitive admin work" class="w-4 h-4 accent-brand">
+                    Repetitive admin work
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="improve_areas" value="Software prototype" class="w-4 h-4 accent-brand">
+                    Software prototype
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="improve_areas" value="Agency partnership" class="w-4 h-4 accent-brand">
+                    Agency partnership
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">
+                  Current tools used
+                </legend>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="current_tools" value="Excel" class="w-4 h-4 accent-brand">
+                    Excel
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="current_tools" value="WhatsApp" class="w-4 h-4 accent-brand">
+                    WhatsApp
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="current_tools" value="Tally/ERP" class="w-4 h-4 accent-brand">
+                    Tally / ERP
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="current_tools" value="Website" class="w-4 h-4 accent-brand">
+                    Website
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="current_tools" value="CRM" class="w-4 h-4 accent-brand">
+                    CRM
+                  </label>
+                  <label class="flex items-center gap-2.5 text-sm text-ink cursor-pointer">
+                    <input type="checkbox" name="current_tools" value="Other" class="w-4 h-4 accent-brand">
+                    Other
+                  </label>
+                </div>
+              </fieldset>
+
+              <div>
+                <label for="sme-description" class="block text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">
+                  Brief description <span class="text-brand">*</span>
+                </label>
+                <textarea id="sme-description" name="description" required rows="5" placeholder="What would you like AI to improve? Share enough context that we can reply with a useful next step." class="w-full px-4 py-3 text-sm text-ink bg-white border border-hairline rounded-[3px] placeholder:text-ink-muted/50 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors duration-150 resize-none"></textarea>
+              </div>
+
+              <!-- Honeypot -->
+              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+
+              <div class="pt-2">
+                <button type="submit" class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group" style="cursor:pointer">
+                  Request AI Opportunity Review
+                  <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </button>
+                <p class="mt-4 text-xs text-ink-muted">
+                  We typically take 2–3 engagements at a time. If you are timing-sensitive, mention it in the description.
+                </p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-canvas border-t border-hairline">
+    <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+      <div>
+        <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] text-ink">Auti</a>
+        <p class="mt-1 text-xs text-ink-muted">© <span id="footer-year"></span> Auti Software Consultancy Services</p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5">
+        <a href="/work.html"           class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Work</a>
+        <a href="/about.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">About</a>
+        <a href="/contact.html"        class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Contact</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <a href="/privacy-policy.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Privacy</a>
+        <a href="/terms.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Terms</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <span class="text-xs text-ink-muted">India 🇮🇳</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Mobile nav ───
+    const toggle    = document.getElementById('menu-toggle');
+    const menu      = document.getElementById('mobile-menu');
+    const iconOpen  = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+
+    // ─── Opportunity Review form ───
+    const smeForm    = document.getElementById('sme-form');
+    const smeSuccess = document.getElementById('sme-form-success');
+    const smeSubmit  = smeForm?.querySelector('button[type="submit"]');
+
+    smeForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      smeSubmit.disabled = true;
+      smeSubmit.textContent = 'Sending…';
+
+      const data = new FormData(smeForm);
+      data.append('_subject', 'New AI Opportunity Review request via autisoftware.in');
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/info@autisoftware.in', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data,
+        });
+        if (res.ok) {
+          smeForm.classList.add('hidden');
+          smeSuccess.classList.remove('hidden');
+          smeSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          throw new Error();
+        }
+      } catch {
+        smeSubmit.disabled = false;
+        smeSubmit.textContent = 'Request AI Opportunity Review';
+        alert('Something went wrong — please email us directly at info@autisoftware.in');
+      }
+    });
+
+    // ─── Scroll animations ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

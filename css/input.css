@@ -58,6 +58,12 @@
     color: #fff;
   }
 
+  /* Form controls inherit the brand accent */
+  input[type="checkbox"],
+  input[type="radio"] {
+    accent-color: var(--color-brand);
+  }
+
   /* ─── Grain texture overlay ─── */
   body::before {
     content: '';
