@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Sample Demo — AI Proposal System for an Interior Studio — Auti</title>
+  <meta name="description" content="Sample demo by Auti — an illustrative AI proposal system for a fictional interior studio. Not a real client engagement.">
+  <meta property="og:title" content="Sample Demo — AI Proposal System for an Interior Studio — Auti">
+  <meta property="og:description" content="Sample demo by Auti — an illustrative AI proposal system for a fictional interior studio. Not a real client engagement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autisoftware.in/demos/interior-proposal-system.html">
+  <link rel="preload" href="/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body class="bg-canvas text-ink">
+
+  <!-- ─── NAV ─── -->
+  <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-hairline">
+    <nav class="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+
+      <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] hover:opacity-70 transition-opacity duration-150">
+        <span class="text-brand">Au</span><span class="text-ink">ti</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="/work.html"    class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Work</a></li>
+        <li><a href="/about.html"   class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">About</a></li>
+        <li><a href="/sme-ai.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">For SMEs</a></li>
+        <li><a href="/contact.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="/contact.html" class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-brand border border-brand/40 px-4 py-2 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200">
+          Get in touch
+        </a>
+        <button id="menu-toggle" class="md:hidden p-2 -mr-1 text-ink-muted hover:text-ink" aria-label="Toggle menu">
+          <svg id="icon-open"  class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-hairline bg-canvas">
+      <div class="max-w-[1100px] mx-auto px-6 py-5 flex flex-col gap-1">
+        <a href="/work.html"    class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Work</a>
+        <a href="/about.html"   class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">About</a>
+        <a href="/sme-ai.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">For SMEs</a>
+        <a href="/contact.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Contact</a>
+        <a href="/contact.html" class="mt-3 inline-flex items-center justify-center text-sm font-medium text-brand border border-brand/40 px-4 py-2.5 rounded-[3px] hover:bg-brand hover:text-white transition-all duration-200">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-24">
+      <div class="max-w-3xl">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-7">Sample demo</p>
+        <h1 class="text-[44px] md:text-[64px] lg:text-[76px] font-bold tracking-[-0.02em] leading-[1.05] text-ink">
+          AI Proposal System for an <span class="text-brand">Interior Studio.</span>
+        </h1>
+        <p class="mt-8 text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl">
+          A fictional example of how WhatsApp enquiries, site visit notes, and scattered references can become a structured proposal workflow — for a small studio called Niva Spaces.
+        </p>
+        <p class="mt-6 inline-flex items-center gap-2 text-xs text-ink-muted border border-hairline px-3 py-1.5 rounded-[3px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+          Fictional example. Not a real client engagement.
+        </p>
+        <div class="mt-3">
+          <a href="/demos/" class="inline-flex items-center gap-1.5 text-xs text-ink-muted hover:text-brand transition-colors duration-150 group">
+            View all sample demos
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="/contact.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group">
+            Adapt this to your studio
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="/sme-ai.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-ink border border-ink/25 px-6 py-3 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200 group">
+            See the SME offer
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STARTING POINT ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">The starting point</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Good work, scattered process.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            A small interior studio usually has the design taste and the client trust. What slows it down is the back-and-forth — chasing brief details, rebuilding proposals from scratch, and losing track of who is at which stage.
+          </p>
+        </div>
+
+        <div class="fade-up">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-5">What the day-to-day looks like</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Leads from Instagram, referrals, WhatsApp, and walk-ins
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Proposals made manually every time
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Unclear project scope going into the first meeting
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Repeated client questions about timeline and process
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Inconsistent follow-up — some leads cool off
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              No lead pipeline — hard to know what is in flight
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SPRINT OUTPUTS ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Sprint outputs</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            What a 5-day sprint could produce.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            Five practical assets tuned to the way an interior studio actually works — drafted from your existing projects, references, and client conversations.
+          </p>
+        </div>
+
+        <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline">
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">01</p>
+            <h3 class="text-base font-bold text-ink mb-3">Service landing page</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A single page that explains who you design for, your process, and how to start a serious enquiry.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">02</p>
+            <h3 class="text-base font-bold text-ink mb-3">Client requirement form</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A short form that captures the brief before the first meeting, so the consultation starts already informed.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">03</p>
+            <h3 class="text-base font-bold text-ink mb-3">Proposal template</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A reusable structure for proposals — same sections, same flow, populated faster from existing material.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">04</p>
+            <h3 class="text-base font-bold text-ink mb-3">WhatsApp follow-up sequence</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A four-step sequence so warm leads do not go cold, with messages adapted to where they are in the process.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">05</p>
+            <h3 class="text-base font-bold text-ink mb-3">Project pipeline dashboard</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A simple board that shows every active enquiry, its stage, and the next action — readable in a minute.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SAMPLE SERVICE LANDING PAGE ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 01</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample service landing page.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            A focused page that explains the studio's positioning, services, process, and enquiry path — so serious prospects understand how to start before the first call.
+          </p>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-8 md:p-12 max-w-4xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-8">Sample — Niva Spaces service page</p>
+
+          <h3 class="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink leading-snug">
+            Niva Spaces
+          </h3>
+          <p class="mt-2 text-sm text-brand font-medium">Thoughtful interiors for homes that need clarity before execution.</p>
+
+          <p class="mt-6 text-sm text-ink-muted leading-relaxed">
+            We help homeowners turn scattered references, budget questions, and room-by-room requirements into a clear design and execution plan. Start with a short brief, then we recommend the right consultation path.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <a href="#" onclick="return false;" class="inline-flex items-center gap-2 text-sm font-medium text-white bg-brand px-5 py-2.5 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group">
+              Book a design consultation
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <span class="text-xs text-ink-muted">Sample CTA — links are illustrative.</span>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-hairline grid md:grid-cols-2 gap-10">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Who we work with</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Homeowners planning full-home interiors
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Families renovating one or two rooms
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Apartment owners preparing for handover
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Small offices or studios that need a practical redesign
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Services</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Full-home interior planning
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Room-wise redesign
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Modular kitchen planning
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Furniture and material selection
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Design consultation
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Site coordination support
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-hairline">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-4">How the process works</p>
+            <ol class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6 flex-shrink-0">01</span>
+                <span>Share a short requirement form</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6 flex-shrink-0">02</span>
+                <span>Book a consultation or studio visit</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6 flex-shrink-0">03</span>
+                <span>Receive a structured proposal</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6 flex-shrink-0">04</span>
+                <span>Approve scope, commercials, and kickoff plan</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-hairline grid md:grid-cols-2 gap-10">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">What clients receive</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Design direction
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Scope of work
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Phase-wise plan
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Commercial structure
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Exclusions and assumptions
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Next steps
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Before we meet</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Floor plan or approximate area
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Rooms in scope
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Budget range
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Preferred start date
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Reference images or inspiration links
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SAMPLE REQUIREMENT FORM ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 02</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample client requirement form.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            Sent as a link after the first WhatsApp reply. Short enough to finish in five minutes, structured enough to make the first meeting useful.
+          </p>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-8 md:p-10 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Sample — Niva Spaces requirement form</p>
+          <p class="text-sm text-ink-muted leading-relaxed mb-8">A few questions before we meet. Helps us prepare references and a rough scope so the first conversation is useful for both sides.</p>
+
+          <div class="space-y-7">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Property type</p>
+              <div class="border-b border-hairline pb-2 text-sm text-ink-muted">Apartment / Independent house / Office / Retail / Other</div>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Rooms / spaces in scope</p>
+              <div class="border-b border-hairline pb-2 text-sm text-ink-muted">e.g. living + kitchen + 2 bedrooms</div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-7">
+              <div>
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Approximate area</p>
+                <div class="border-b border-hairline pb-2 text-sm text-ink-muted">in sq. ft. (carpet)</div>
+              </div>
+              <div>
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Budget range</p>
+                <div class="border-b border-hairline pb-2 text-sm text-ink-muted">indicative range — helps us scope realistically</div>
+              </div>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Style preference</p>
+              <div class="border-b border-hairline pb-2 text-sm text-ink-muted">Minimal / Warm contemporary / Indian classic / Mixed / Not sure yet</div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-7">
+              <div>
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Expected start date</p>
+                <div class="border-b border-hairline pb-2 text-sm text-ink-muted">approximate month is fine</div>
+              </div>
+              <div>
+                <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Site visit required?</p>
+                <div class="border-b border-hairline pb-2 text-sm text-ink-muted">Yes / No / Not yet — still early</div>
+              </div>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Reference images</p>
+              <div class="border-b border-hairline pb-2 text-sm text-ink-muted">Pinterest links, Instagram saves, or photo attachments — anything that shows what you like</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SAMPLE PROPOSAL ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 03</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample proposal structure.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            Same seven sections every time. New proposals are drafted from existing project material rather than rebuilt from a blank document.
+          </p>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-8 md:p-10 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-6">Sample — Niva Spaces proposal</p>
+
+          <ol class="divide-y divide-hairline">
+            <li class="py-5 first:pt-0">
+              <div class="flex items-start gap-4">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6">01</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">Client brief</p>
+                  <p class="mt-1 text-sm text-ink-muted leading-relaxed">A two-paragraph restatement of what the client wants, in their own words where possible.</p>
+                </div>
+              </div>
+            </li>
+            <li class="py-5">
+              <div class="flex items-start gap-4">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6">02</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">Scope</p>
+                  <p class="mt-1 text-sm text-ink-muted leading-relaxed">Spaces in scope, level of intervention (cosmetic / refit / full redesign), and what is explicitly not included.</p>
+                </div>
+              </div>
+            </li>
+            <li class="py-5">
+              <div class="flex items-start gap-4">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6">03</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">Design approach</p>
+                  <p class="mt-1 text-sm text-ink-muted leading-relaxed">Mood direction, materials palette, and a few reference projects from your portfolio.</p>
+                </div>
+              </div>
+            </li>
+            <li class="py-5">
+              <div class="flex items-start gap-4">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6">04</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">Phases</p>
+                  <p class="mt-1 text-sm text-ink-muted leading-relaxed">Concept → drawings → execution → handover. Indicative timeline against each phase.</p>
+                </div>
+              </div>
+            </li>
+            <li class="py-5">
+              <div class="flex items-start gap-4">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6">05</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">Commercials</p>
+                  <p class="mt-1 text-sm text-ink-muted leading-relaxed">Design fee, execution model, payment milestones, and what triggers each milestone.</p>
+                </div>
+              </div>
+            </li>
+            <li class="py-5">
+              <div class="flex items-start gap-4">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6">06</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">Exclusions</p>
+                  <p class="mt-1 text-sm text-ink-muted leading-relaxed">Civil work, statutory approvals, or anything that depends on a third party — listed plainly.</p>
+                </div>
+              </div>
+            </li>
+            <li class="py-5 last:pb-0">
+              <div class="flex items-start gap-4">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-6">07</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">Next steps</p>
+                  <p class="mt-1 text-sm text-ink-muted leading-relaxed">A clear yes / no path — site visit booking, advance, and the kickoff date if approved.</p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOLLOW-UP SEQUENCE ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 04</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample follow-up sequence.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            Four short messages over ten days. Each one assumes the lead is busy, and gives them an easy reply path.
+          </p>
+        </div>
+
+        <div class="stagger space-y-3 max-w-3xl">
+          <div class="fade-up bg-white border border-hairline rounded-[3px] p-6 md:p-7 grid grid-cols-[80px_1fr] gap-5 items-start">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-brand">Day 0</p>
+              <p class="mt-1 text-xs text-ink-muted">After enquiry</p>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-ink">Acknowledge and send the requirement form</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">Thank you for reaching out. Here is a short form that helps us prepare for our first conversation. Once we have it, we suggest a couple of time slots for a call or studio visit.</p>
+            </div>
+          </div>
+          <div class="fade-up bg-white border border-hairline rounded-[3px] p-6 md:p-7 grid grid-cols-[80px_1fr] gap-5 items-start">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-brand">Day 2</p>
+              <p class="mt-1 text-xs text-ink-muted">If form not filled</p>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-ink">Gentle nudge with help</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">A quick reminder on the requirement form. Happy to fill this together over a 10-minute call if it is easier — share a slot that suits you.</p>
+            </div>
+          </div>
+          <div class="fade-up bg-white border border-hairline rounded-[3px] p-6 md:p-7 grid grid-cols-[80px_1fr] gap-5 items-start">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-brand">Day 5</p>
+              <p class="mt-1 text-xs text-ink-muted">After consultation</p>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-ink">Share a recap and indicative scope</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">Sharing a short recap of what we discussed and an indicative scope. The full proposal will follow once we agree this captures the brief correctly.</p>
+            </div>
+          </div>
+          <div class="fade-up bg-white border border-hairline rounded-[3px] p-6 md:p-7 grid grid-cols-[80px_1fr] gap-5 items-start">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-brand">Day 10</p>
+              <p class="mt-1 text-xs text-ink-muted">If no response on proposal</p>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-ink">Open a clear yes / no</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">Following up on the proposal sent last week. Happy to revise scope or commercials if either feels off — and equally happy to pause if the timing is not right yet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PIPELINE ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 05</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Project pipeline.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            Every active lead, the stage it is at, and the next thing to do. Reviewed once a week.
+          </p>
+        </div>
+
+        <div class="fade-up overflow-x-auto border border-hairline rounded-[3px] bg-white">
+          <table class="w-full text-[13px] text-left">
+            <thead class="bg-canvas border-b border-hairline">
+              <tr>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Lead</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Source</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Stage</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Project value</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Next action</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Owner</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-hairline">
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Aarti Menon — 2BHK apartment</td>
+                <td class="px-4 py-3 text-ink-muted">Instagram</td>
+                <td class="px-4 py-3"><span class="text-[11px] font-medium border border-hairline px-2 py-0.5 rounded-sm text-ink-muted whitespace-nowrap">New enquiry</span></td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">—</td>
+                <td class="px-4 py-3 text-ink-muted">Send requirement form</td>
+                <td class="px-4 py-3 text-ink-muted">Niva</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Sameer Iyer — 3BHK apartment</td>
+                <td class="px-4 py-3 text-ink-muted">Referral</td>
+                <td class="px-4 py-3"><span class="text-[11px] font-medium border border-hairline px-2 py-0.5 rounded-sm text-ink-muted whitespace-nowrap">Consultation booked</span></td>
+                <td class="px-4 py-3 text-ink whitespace-nowrap">~₹14L</td>
+                <td class="px-4 py-3 text-ink-muted">Studio meeting — 09 May</td>
+                <td class="px-4 py-3 text-ink-muted">Niva</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Rao Family — villa project</td>
+                <td class="px-4 py-3 text-ink-muted">Walk-in</td>
+                <td class="px-4 py-3"><span class="text-[11px] font-medium border border-hairline px-2 py-0.5 rounded-sm text-ink-muted whitespace-nowrap">Site visit</span></td>
+                <td class="px-4 py-3 text-ink whitespace-nowrap">~₹32L</td>
+                <td class="px-4 py-3 text-ink-muted">Site visit on 11 May</td>
+                <td class="px-4 py-3 text-ink-muted">Aarav</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Studio Velvet — office redesign</td>
+                <td class="px-4 py-3 text-ink-muted">WhatsApp</td>
+                <td class="px-4 py-3"><span class="text-[11px] font-medium border border-hairline px-2 py-0.5 rounded-sm text-ink-muted whitespace-nowrap">Proposal sent</span></td>
+                <td class="px-4 py-3 text-ink whitespace-nowrap">₹9.4L</td>
+                <td class="px-4 py-3 text-ink-muted">Follow-up on Day 5</td>
+                <td class="px-4 py-3 text-ink-muted">Niva</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">D'Souza Residence — renovation</td>
+                <td class="px-4 py-3 text-ink-muted">Referral</td>
+                <td class="px-4 py-3"><span class="text-[11px] font-medium border border-hairline px-2 py-0.5 rounded-sm text-ink-muted whitespace-nowrap">Negotiation</span></td>
+                <td class="px-4 py-3 text-ink whitespace-nowrap">₹18.5L</td>
+                <td class="px-4 py-3 text-ink-muted">Revised commercials due</td>
+                <td class="px-4 py-3 text-ink-muted">Aarav</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Shah Apartment — full-home interiors</td>
+                <td class="px-4 py-3 text-ink-muted">Instagram</td>
+                <td class="px-4 py-3"><span class="text-[11px] font-medium border border-hairline px-2 py-0.5 rounded-sm text-ink-muted whitespace-nowrap">Won</span></td>
+                <td class="px-4 py-3 text-ink whitespace-nowrap">₹11.2L</td>
+                <td class="px-4 py-3 text-ink-muted">Kickoff 13 May</td>
+                <td class="px-4 py-3 text-ink-muted">Niva</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-6 text-xs text-ink-muted">Sample fictional pipeline data shown for illustration only.</p>
+      </div>
+    </section>
+
+    <!-- ─── WHERE AI HELPS ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Scope</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Where AI helps.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            AI helps with drafting, structuring, summarizing, and workflow support. It does not make design decisions, commit pricing, or replace the studio's judgment.
+          </p>
+        </div>
+
+        <div class="fade-up mb-10">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-5">What it actually does</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Turn WhatsApp notes and form responses into a structured client brief
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Draft first proposal versions from approved templates
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Create follow-up messages based on lead stage
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Summarize site visit notes into scope points
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Flag missing brief details before proposal creation
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Prepare weekly pipeline summaries for the studio owner
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Reuse past project descriptions and portfolio language consistently
+            </li>
+          </ul>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-6 md:p-7 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Boundary</p>
+          <p class="text-sm text-ink leading-relaxed">
+            AI does not make design decisions, commit pricing, or replace client judgment. It helps structure information, draft assets, and reduce repetitive proposal work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Adapt this</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Make this work for your studio.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            This is a sample demo. In a real sprint, we adapt the assets and workflow to your projects, your tone, and the team you already have — without disrupting the way you work.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="/contact.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group">
+              Talk to Auti
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="/sme-ai.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-ink border border-ink/25 px-6 py-3 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200 group">
+              See the SME offer
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="mt-12 pt-10 border-t border-hairline">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">For partner agencies</p>
+            <p class="text-sm text-ink-muted leading-relaxed max-w-2xl">
+              Work with interior studios, architects, or real estate businesses? We can also adapt this as a white-label execution workflow for your clients.
+            </p>
+            <a href="/contact.html" class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-ink transition-colors duration-150 group">
+              Discuss a partner workflow
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-canvas border-t border-hairline">
+    <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+      <div>
+        <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] text-ink">Auti</a>
+        <p class="mt-1 text-xs text-ink-muted">© <span id="footer-year"></span> Auti Software Consultancy Services</p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5">
+        <a href="/work.html"           class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Work</a>
+        <a href="/about.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">About</a>
+        <a href="/contact.html"        class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Contact</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <a href="/privacy-policy.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Privacy</a>
+        <a href="/terms.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Terms</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <span class="text-xs text-ink-muted">India 🇮🇳</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Mobile nav ───
+    const toggle    = document.getElementById('menu-toggle');
+    const menu      = document.getElementById('mobile-menu');
+    const iconOpen  = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+
+    // ─── Scroll animations ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
