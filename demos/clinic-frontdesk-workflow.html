@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Sample Demo — AI Workflow for a Clinic Front Desk — Auti</title>
+  <meta name="description" content="Sample demo by Auti — an illustrative front-desk workflow for a fictional clinic. Admin and communication only — no medical records. Not a real client engagement.">
+  <meta property="og:title" content="Sample Demo — AI Workflow for a Clinic Front Desk — Auti">
+  <meta property="og:description" content="Sample demo by Auti — an illustrative front-desk workflow for a fictional clinic. Admin and communication only — no medical records. Not a real client engagement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autisoftware.in/demos/clinic-frontdesk-workflow.html">
+  <link rel="preload" href="/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body class="bg-canvas text-ink">
+
+  <!-- ─── NAV ─── -->
+  <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-hairline">
+    <nav class="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+
+      <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] hover:opacity-70 transition-opacity duration-150">
+        <span class="text-brand">Au</span><span class="text-ink">ti</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="/work.html"    class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Work</a></li>
+        <li><a href="/about.html"   class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">About</a></li>
+        <li><a href="/sme-ai.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">For SMEs</a></li>
+        <li><a href="/contact.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="/contact.html" class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-brand border border-brand/40 px-4 py-2 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200">
+          Get in touch
+        </a>
+        <button id="menu-toggle" class="md:hidden p-2 -mr-1 text-ink-muted hover:text-ink" aria-label="Toggle menu">
+          <svg id="icon-open"  class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-hairline bg-canvas">
+      <div class="max-w-[1100px] mx-auto px-6 py-5 flex flex-col gap-1">
+        <a href="/work.html"    class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Work</a>
+        <a href="/about.html"   class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">About</a>
+        <a href="/sme-ai.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">For SMEs</a>
+        <a href="/contact.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Contact</a>
+        <a href="/contact.html" class="mt-3 inline-flex items-center justify-center text-sm font-medium text-brand border border-brand/40 px-4 py-2.5 rounded-[3px] hover:bg-brand hover:text-white transition-all duration-200">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-24">
+      <div class="max-w-3xl">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-7">Sample demo</p>
+        <h1 class="text-[44px] md:text-[64px] lg:text-[76px] font-bold tracking-[-0.02em] leading-[1.05] text-ink">
+          AI Workflow for a <span class="text-brand">Clinic Front Desk.</span>
+        </h1>
+        <p class="mt-8 text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl">
+          A fictional example of how appointment enquiries, repeated questions, reminders, and review requests can be structured into a simple front-desk workflow — for a small practice called Gangapur Dental Care.
+        </p>
+        <p class="mt-6 inline-flex items-center gap-2 text-xs text-ink-muted border border-hairline px-3 py-1.5 rounded-[3px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+          Fictional example. Not a real client engagement.
+        </p>
+        <p class="mt-3 text-xs text-ink-muted max-w-2xl leading-relaxed">
+          This demo focuses on front-desk admin and communication only. It does not store, process, or display sensitive medical records.
+        </p>
+        <div class="mt-3">
+          <a href="/demos/" class="inline-flex items-center gap-1.5 text-xs text-ink-muted hover:text-brand transition-colors duration-150 group">
+            View all sample demos
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="/contact.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group">
+            Adapt this to your clinic
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="/sme-ai.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-ink border border-ink/25 px-6 py-3 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200 group">
+            See the SME offer
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STARTING POINT ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">The starting point</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Front desk under quiet pressure.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            A small clinic does not have a queue management problem. It has a communication problem. The same questions arrive every day on different channels, and good intentions get lost between the doctor's chamber, the desk phone, and a personal WhatsApp.
+          </p>
+        </div>
+
+        <div class="fade-up">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-5">What the day-to-day looks like</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              WhatsApp enquiries through the day, replied to when there is a gap
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Missed calls during chair-side procedures
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Repeated questions about timings, fees, and services
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Manual appointment reminders, when there is time
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Weak follow-up with patients who postponed
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              No owner visibility into enquiry volume or patterns
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SPRINT OUTPUTS ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Sprint outputs</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            What a 5-day sprint could produce.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            Five practical assets focused entirely on admin and communication — none of them touch clinical notes, prescriptions, or medical history.
+          </p>
+        </div>
+
+        <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline">
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">01</p>
+            <h3 class="text-base font-bold text-ink mb-3">Service explainer page</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A clean page with services, timings, fees indication, location, and how to book.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">02</p>
+            <h3 class="text-base font-bold text-ink mb-3">FAQ response bank</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">Pre-approved short answers to the same questions that arrive every day, ready to send.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">03</p>
+            <h3 class="text-base font-bold text-ink mb-3">Appointment reply templates</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A standard reply that asks for the right details, in the right order, every time.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">04</p>
+            <h3 class="text-base font-bold text-ink mb-3">Reception tracker</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A simple sheet that captures every enquiry, status, and follow-up — without any clinical data.</p>
+          </div>
+          <div class="fade-up bg-white p-8 md:px-10 md:py-12">
+            <p class="text-[11px] font-semibold tracking-widest text-brand mb-4">05</p>
+            <h3 class="text-base font-bold text-ink mb-3">Review request workflow</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">A short, polite message sent the day after a visit, with a direct link to leave a review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SAMPLE SERVICE EXPLAINER PAGE ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 01</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample service explainer page.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            One clean page that answers the questions a first-time visitor is already asking — what you do, how to book, and what to expect.
+          </p>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-8 md:p-12 max-w-4xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-6">Sample — clinic service page</p>
+
+          <h3 class="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink leading-snug">
+            Gangapur Dental Care
+          </h3>
+          <p class="mt-2 text-sm text-brand font-medium">A small family dental practice in Nashik — consultations, cleanings, fillings, root canals, and routine care.</p>
+
+          <p class="mt-6 text-sm text-ink-muted leading-relaxed">
+            Same dentist, same chair, same calm room every visit. We explain what we see, what your options are, and what each option will cost — before any treatment begins.
+          </p>
+
+          <div class="mt-10 grid md:grid-cols-2 gap-10">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">What we offer</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  General consultation and dental check-up
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Scaling, polishing, and cleanings
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Fillings and cosmetic restorations
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Root canal treatment
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Routine paediatric and family care
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">How booking works</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  Send a WhatsApp message with your preferred day, main concern, name, and phone number
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  We confirm a slot within working hours and share a short pre-visit note
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+                  A reminder is sent the day before your appointment
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-hairline">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">What to expect on your first visit</p>
+            <p class="text-sm text-ink-muted leading-relaxed">
+              Plan for 30 to 40 minutes. The doctor will listen to your concern, do a brief examination, and — if needed — take an X-ray. You will get a clear explanation of the findings, your options, and indicative costs before any treatment is scheduled.
+            </p>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-hairline grid md:grid-cols-2 gap-8">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Timings</p>
+              <p class="text-sm text-ink-muted leading-relaxed">Mon–Sat, 10:00 AM – 7:30 PM<br>Sun by appointment, follow-ups only</p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-3">Location</p>
+              <p class="text-sm text-ink-muted leading-relaxed">Gangapur Road, Nashik<br>Parking available on premises</p>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-hairline flex flex-wrap items-center gap-4">
+            <a href="#" class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group" onclick="return false;">
+              Book an appointment on WhatsApp
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <span class="text-xs text-ink-muted">Sample CTA — links are illustrative.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ EXAMPLES ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 02</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample FAQ response bank.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            Five questions cover most front-desk traffic. Replies are short, factual, and identical every time.
+          </p>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-8 md:p-10 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-6">Sample — Gangapur Dental Care FAQ replies</p>
+
+          <div class="divide-y divide-hairline">
+            <div class="py-5 first:pt-0">
+              <p class="text-sm font-semibold text-ink">What are your timings?</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">We are open Monday to Saturday, 10:00 AM to 7:30 PM. Sundays by appointment for follow-ups only.</p>
+            </div>
+            <div class="py-5">
+              <p class="text-sm font-semibold text-ink">How do I book an appointment?</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">Reply on this WhatsApp number with your preferred day and time, your main concern, and your full name. We confirm a slot within working hours.</p>
+            </div>
+            <div class="py-5">
+              <p class="text-sm font-semibold text-ink">What happens at the first visit?</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">A consultation, a brief examination, and — if needed — an X-ray. The doctor explains the findings and your options before anything is done.</p>
+            </div>
+            <div class="py-5">
+              <p class="text-sm font-semibold text-ink">How long does a consultation take?</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">Plan for around 30 to 40 minutes for a first visit. Follow-up consultations are usually shorter.</p>
+            </div>
+            <div class="py-5 last:pb-0">
+              <p class="text-sm font-semibold text-ink">What should I bring?</p>
+              <p class="mt-2 text-sm text-ink-muted leading-relaxed">Any past dental records or X-rays you have, a list of current medication, and a valid ID. If a child is the patient, please come with a parent or guardian.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── APPOINTMENT REPLY ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 03</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample appointment reply.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            One template, used on WhatsApp and over phone, that captures the right details before a slot is booked.
+          </p>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-8 md:p-10 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-6">Sample — appointment reply (WhatsApp)</p>
+
+          <div class="space-y-4 text-sm text-ink leading-relaxed">
+            <p>Hello {{First name}},</p>
+            <p class="text-ink-muted">Thank you for reaching out to Gangapur Dental Care. To book a slot, please share the following on this number:</p>
+
+            <ol class="space-y-2 pl-1">
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-5">01</span>
+                <span><span class="text-ink font-medium">Preferred day and time</span> — a morning or evening window is fine</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-5">02</span>
+                <span><span class="text-ink font-medium">Main concern</span> — in your own words, one or two sentences</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-5">03</span>
+                <span><span class="text-ink font-medium">Full name</span> — and patient's name if booking for someone else</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-ink-muted">
+                <span class="text-[11px] font-semibold text-brand mt-0.5 w-5">04</span>
+                <span><span class="text-ink font-medium">Phone number</span> — a number we can reach you on</span>
+              </li>
+            </ol>
+
+            <p class="text-ink-muted">We will confirm a slot within working hours and send a reminder one day before your appointment.</p>
+            <p class="text-ink-muted">Regards,<br>Front Desk<br>Gangapur Dental Care</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RECEPTION TRACKER ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 04</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Reception tracker.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            A non-clinical sheet for the front desk. Captures who reached out, what they wanted, and what to do next — nothing else.
+          </p>
+        </div>
+
+        <div class="fade-up overflow-x-auto border border-hairline rounded-[3px] bg-white">
+          <table class="w-full text-[13px] text-left">
+            <thead class="bg-canvas border-b border-hairline">
+              <tr>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Name</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Phone</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Enquiry type</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Preferred slot</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Status</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Follow-up date</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Appointment confirmed</th>
+                <th class="px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-ink-muted whitespace-nowrap">Review requested</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-hairline">
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Anjali Kulkarni</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">+91 98xxx xx112</td>
+                <td class="px-4 py-3 text-ink-muted">Consultation</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">Sat morning</td>
+                <td class="px-4 py-3 text-ink-muted">Booked</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">—</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">10 May, 11:00</td>
+                <td class="px-4 py-3 text-ink-muted">—</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Mahesh Patil</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">+91 98xxx xx337</td>
+                <td class="px-4 py-3 text-ink-muted">Cleaning enquiry</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">Weekday evening</td>
+                <td class="px-4 py-3 text-ink-muted">Awaiting reply</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">09 May</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">—</td>
+                <td class="px-4 py-3 text-ink-muted">—</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Faiz Sheikh</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">+91 90xxx xx014</td>
+                <td class="px-4 py-3 text-ink-muted">Follow-up</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">Thu afternoon</td>
+                <td class="px-4 py-3 text-ink-muted">Booked</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">—</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">08 May, 15:30</td>
+                <td class="px-4 py-3 text-ink-muted">—</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Pooja Deshmukh</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">+91 98xxx xx289</td>
+                <td class="px-4 py-3 text-ink-muted">First visit</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">Sun (next available)</td>
+                <td class="px-4 py-3 text-ink-muted">Postponed</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">15 May</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">—</td>
+                <td class="px-4 py-3 text-ink-muted">—</td>
+              </tr>
+              <tr class="hover:bg-canvas/50 transition-colors">
+                <td class="px-4 py-3 text-ink whitespace-nowrap">Suresh Joshi</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">+91 99xxx xx760</td>
+                <td class="px-4 py-3 text-ink-muted">Visit completed</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">—</td>
+                <td class="px-4 py-3 text-ink-muted">Closed</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">—</td>
+                <td class="px-4 py-3 text-ink-muted whitespace-nowrap">06 May, 12:00</td>
+                <td class="px-4 py-3 text-ink-muted">Yes — 07 May</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-6 text-xs text-ink-muted max-w-3xl leading-relaxed">
+          Note: this tracker holds front-desk admin information only — name, contact number, enquiry type, and scheduling status. No clinical notes, diagnoses, or prescriptions are stored or displayed here.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── REVIEW REQUEST ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Asset 05</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Sample review request.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            Sent the day after a visit. Short, polite, and easy to ignore — which is exactly why people actually respond.
+          </p>
+        </div>
+
+        <div class="fade-up bg-white border border-hairline rounded-[3px] p-8 md:p-10 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-6">Sample — review request (WhatsApp)</p>
+
+          <div class="space-y-4 text-sm text-ink leading-relaxed">
+            <p>Hello {{First name}},</p>
+            <p class="text-ink-muted">Thank you for visiting Gangapur Dental Care yesterday.</p>
+            <p class="text-ink-muted">If you have a minute, a short Google review would mean a lot to our team. It helps other people in the area find us when they need a clinic they can trust.</p>
+            <p class="text-ink-muted">You can leave a review here: <span class="text-brand">g.page/r/your-review-link</span></p>
+            <p class="text-ink-muted">If anything from the visit could have been better, please reply on this number — we would rather hear it directly.</p>
+            <p class="text-ink-muted">Regards,<br>Front Desk<br>Gangapur Dental Care</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHERE AI HELPS ─── -->
+    <section class="bg-canvas border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up mb-12 max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Scope</p>
+          <h2 class="text-[36px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[1.1] text-ink">
+            Where AI helps without touching clinical records.
+          </h2>
+          <p class="mt-6 text-lg text-ink-muted leading-relaxed">
+            AI is used here only to support admin and communication at the front desk. It does not read, store, or generate clinical notes, prescriptions, diagnoses, or any sensitive medical information.
+          </p>
+        </div>
+
+        <div class="fade-up">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-5">What it actually does</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Classify each incoming enquiry by type — booking, reschedule, FAQ, or other
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Draft replies from approved templates, ready for the front desk to review and send
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Flag overdue follow-ups so warm enquiries are not forgotten
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Summarize non-clinical front-desk activity at the end of each day
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Prepare a short weekly owner report — enquiry volume, conversion, follow-ups due
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+              <span class="mt-1.5 w-1 h-1 rounded-full bg-brand flex-shrink-0"></span>
+              Suggest FAQ improvements based on questions that come up repeatedly
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="bg-white border-t border-hairline">
+      <div class="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
+        <div class="fade-up max-w-3xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-4">Adapt this</p>
+          <h2 class="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[1.05] text-ink">
+            Make this work for your practice.
+          </h2>
+          <p class="mt-8 text-lg text-ink-muted leading-relaxed">
+            This is a sample demo. In a real sprint, we adapt the assets and workflow to your services, your patients, and your team — and we are explicit about which kinds of data the workflow does and does not touch.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="/contact.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:bg-brand-dark transition-colors duration-200 group">
+              Talk to Auti
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="/sme-ai.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-ink border border-ink/25 px-6 py-3 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200 group">
+              See the SME offer
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-hairline">
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">For partner agencies</p>
+            <p class="text-sm text-ink-muted leading-relaxed">
+              Work with clinics or healthcare businesses? We can also adapt this as a white-label execution workflow for your clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-canvas border-t border-hairline">
+    <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+      <div>
+        <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] text-ink">Auti</a>
+        <p class="mt-1 text-xs text-ink-muted">© <span id="footer-year"></span> Auti Software Consultancy Services</p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5">
+        <a href="/work.html"           class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Work</a>
+        <a href="/about.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">About</a>
+        <a href="/contact.html"        class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Contact</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <a href="/privacy-policy.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Privacy</a>
+        <a href="/terms.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Terms</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <span class="text-xs text-ink-muted">India 🇮🇳</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Mobile nav ───
+    const toggle    = document.getElementById('menu-toggle');
+    const menu      = document.getElementById('mobile-menu');
+    const iconOpen  = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+
+    // ─── Scroll animations ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
