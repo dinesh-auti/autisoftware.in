@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work — Auti</title>
-  <meta name="description" content="Selected engagements from Auti — product, backend, ML, and platform engineering work for startups and scaling companies.">
+  <meta name="description" content="Selected work led by Auti's founder — AI-infrastructure reliability, developer platforms, Kubernetes, and observability for compliance-driven and scaling teams.">
   <link rel="preload" href="/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
@@ -18,7 +18,6 @@
       <ul class="hidden md:flex items-center gap-8">
         <li><a href="/work.html"    class="text-sm text-ink font-medium">Work</a></li>
         <li><a href="/about.html"   class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">About</a></li>
-        <li><a href="/sme-ai.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">For SMEs</a></li>
         <li><a href="/contact.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
@@ -35,7 +34,6 @@
       <div class="max-w-[1100px] mx-auto px-6 py-5 flex flex-col gap-1">
         <a href="/work.html"    class="text-sm text-ink font-medium py-2.5 border-b border-hairline">Work</a>
         <a href="/about.html"   class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">About</a>
-        <a href="/sme-ai.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">For SMEs</a>
         <a href="/contact.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Contact</a>
         <a href="/contact.html" class="mt-3 inline-flex items-center justify-center text-sm font-medium text-brand border border-brand/40 px-4 py-2.5 rounded-[3px] hover:bg-brand hover:text-white transition-all duration-200">
           Get in touch
@@ -51,10 +49,10 @@
       <div class="max-w-2xl fade-up">
         <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-4">Selected work</p>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-[-0.02em] leading-[1.1] text-ink">
-          Problems we've been trusted with.
+          Reliability, from platforms to AI infra.
         </h1>
         <p class="mt-6 text-lg text-ink-muted leading-relaxed max-w-lg">
-          Most of our work is confidential. Where clients have given permission — or where we can share without attribution — we document the problem and what we built.
+          Before founding Auti, I spent ~9 years as an SRE inside the teams that built these systems. Below is a selection of that work — anonymised where engagements remain confidential. It's my hands-on track record as an engineer, not a client roster.
         </p>
       </div>
     </section>
@@ -63,76 +61,143 @@
     <section class="max-w-[1100px] mx-auto px-6 pb-20 md:pb-28">
       <div class="border-t border-hairline">
 
-        <!-- Work item 1 -->
+        <!-- Work item 1 — Secure AI-agent deployment platform (lead wedge) -->
         <article class="fade-up border-b border-hairline py-10 md:py-12 grid md:grid-cols-[240px_1fr] gap-6 md:gap-16">
           <div>
-            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Fintech · Series B</span>
-            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">ML Inference Pipeline</h2>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">AI Infrastructure · Enterprise</span>
+            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">Secure Deployment Platform for AI Agents</h2>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">ML Systems</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">AI Infra</span>
               <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Platform</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Security</span>
             </div>
           </div>
           <div class="space-y-4">
             <div>
               <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The problem</p>
               <p class="text-[15px] text-ink-muted leading-relaxed">
-                A production ML model powering fraud detection was serving predictions through a brittle, monolithic inference service. As request volume grew, p99 latency ballooned past 4 seconds. Deploys took a full afternoon and required manual rollbacks on roughly 30% of releases.
+                As teams started building AI agents, there was no safe, standard way to get them into production. Every developer wired up their own observability, model access, cost controls, and retrieval by hand — and every deployment raised the same unanswered questions: what can it access, how much is it spending, and what is it actually doing once it's live.
               </p>
             </div>
             <div>
-              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">What we built</p>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The work</p>
               <p class="text-[15px] text-ink-muted leading-relaxed">
-                We rebuilt the serving layer as a purpose-built inference service with model versioning, canary rollouts, and structured observability. Introduced async pre-processing to eliminate the main bottleneck. Rewrote the deploy pipeline with automated rollback triggers tied to latency SLOs.
+                I helped build an internal platform where developers build the agent and the platform handles the tooling around it — Langfuse-based observability, a gateway governing model and token usage, and managed RAG for agents to consume. Cost governance, access scoping, and structured telemetry were wired in by default, so the guardrails were part of the platform rather than an afterthought.
               </p>
             </div>
             <div>
               <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Outcome</p>
               <p class="text-[15px] text-ink leading-relaxed font-[450]">
-                p99 latency dropped from 4.2s to under 900ms. Deploys went from afternoon events to 12-minute automated runs. The ML team now owns and maintains the service independently.
+                Turned ad-hoc, self-wired agent deployment into a self-serve path that took minutes — with observability, model and cost governance, and retrieval provided by the platform instead of rebuilt by each team.
               </p>
             </div>
           </div>
         </article>
 
-        <!-- Work item 2 -->
+        <!-- Work item 2 — ECS→EKS migration + CI/CD platform -->
         <article class="fade-up border-b border-hairline py-10 md:py-12 grid md:grid-cols-[240px_1fr] gap-6 md:gap-16">
           <div>
-            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">E-commerce · Scale-up</span>
-            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">Platform Foundation</h2>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Health-tech · HITRUST</span>
+            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">ECS→EKS Migration &amp; CI/CD Platform</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Kubernetes</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Platform</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">CI/CD</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The problem</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                A compliance-driven health-tech platform (HITRUST) was running client workloads on an ECS setup it had outgrown — scaling and maintenance were increasingly painful, and every team wired up its own release pipeline by hand.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The work</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                I led automation of the build and release pipelines through a months-long, multi-team migration of client workloads from ECS to EKS — implementing Concord deployment flows for running the platform on Kubernetes and migrating one of the first clients onto the new architecture. Alongside it I built a core library of reusable GitHub Actions that let Java, Node.js, and Python services build, containerise, and push to ECR from a few lines of YAML — with Chainguard base images and Trivy scanning baked in for secure, production-ready artifacts.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Outcome</p>
+              <p class="text-[15px] text-ink leading-relaxed font-[450]">
+                A new service went from days of hand-rolled pipeline plumbing to production-grade CI in minutes of YAML, and manual multi-step releases became automated, repeatable deploys — on a hardened, scalable Kubernetes platform.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work item 3 — Internal developer platform -->
+        <article class="fade-up border-b border-hairline py-10 md:py-12 grid md:grid-cols-[240px_1fr] gap-6 md:gap-16">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Developer Platform</span>
+            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">Internal Developer Platform</h2>
             <div class="mt-4 flex flex-wrap gap-2">
               <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Platform</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Developer Experience</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Cost</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The problem</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                Developers had no single place to find and stand up what they needed. Service ownership was scattered, build artifacts sat on a third party's premises, and there was no safe, self-serve way to experiment against production-like environments.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The work</p>
+              <p class="text-[15px] text-ink-muted leading-relaxed">
+                I built out an internal developer platform, cumulatively: a <strong class="text-ink font-medium">Backstage</strong> service catalog so teams could discover and own their services; a self-hosted <strong class="text-ink font-medium">Sonatype Nexus</strong> registry, moved off the SaaS-hosted version onto infrastructure the team controlled, for security and control (SSO, Maven/npm/PyPI, and a Go post-setup script for consistent, repeatable setup); dynamic, branch-based sandbox environments so developers could spin up isolated instances in their own namespaces; and an internal portal surfacing cost and usage metrics back to teams.
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Outcome</p>
+              <p class="text-[15px] text-ink leading-relaxed font-[450]">
+                One self-serve platform: developers discover services in Backstage, pull artifacts from a secured in-house registry, spin up isolated environments on demand, and see their own cost and usage — instead of waiting on shared environments and stitching tooling together by hand.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work item 4 — Observability & SRE foundation -->
+        <article class="fade-up border-b border-hairline py-10 md:py-12 grid md:grid-cols-[240px_1fr] gap-6 md:gap-16">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand">Reliability</span>
+            <h2 class="mt-2 text-xl font-extrabold tracking-tight text-ink leading-snug">Observability &amp; SRE Foundation</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Observability</span>
+              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">SRE</span>
               <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">Reliability</span>
-              <span class="text-[11px] text-ink-muted border border-hairline px-2.5 py-1 rounded-sm">DevOps</span>
             </div>
           </div>
           <div class="space-y-4">
             <div>
               <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The problem</p>
               <p class="text-[15px] text-ink-muted leading-relaxed">
-                A fast-growing e-commerce platform was deploying multiple times per week into a fragile, manually managed infrastructure. Each release took 45+ minutes, required two senior engineers on standby, and had a roughly 25% rollback rate. The team had stopped shipping features confidently.
+                Services were reaching production without a consistent way to see what they were doing. Metrics, logs, traces, and profiles were fragmented — and without a proper observability stack, fast diagnosis simply isn't possible. On-call was a pain, and incidents ran on guesswork.
               </p>
             </div>
             <div>
-              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">What we built</p>
+              <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">The work</p>
               <p class="text-[15px] text-ink-muted leading-relaxed">
-                Migrated workloads to a Kubernetes-based deployment architecture with GitOps workflows, automated blue-green deploys, and comprehensive rollback triggers. Introduced environment parity between staging and production to eliminate "works on staging" issues. Built a shared internal platform library that standardised service configuration across 11 microservices.
+                I helped roll out a comprehensive observability stack on the kube-prometheus-stack — system-wide metrics via Prometheus, Grafana dashboards backed by Loki for logs and Mimir for long-term metric storage in S3, and alerting through Alertmanager. I onboarded teams onto profiling (Pyroscope) and distributed tracing (Tempo), and supported service-level monitoring with exporters and custom metrics.
               </p>
             </div>
             <div>
               <p class="text-[11px] font-semibold uppercase tracking-widest text-ink-muted mb-2">Outcome</p>
               <p class="text-[15px] text-ink leading-relaxed font-[450]">
-                Mean time to deploy dropped from 45 minutes to under 3. Rollback rate dropped to near zero. Within 60 days the engineering team was shipping 2x as many features with the same headcount.
+                One alertable view across metrics, logs, traces, and profiles — turning incident response from per-service guesswork into fast root-cause, and making on-call sustainable. Long-term metrics landed on S3 for durable, cost-efficient retention.
               </p>
             </div>
           </div>
         </article>
 
-        <!-- More work placeholder -->
+        <!-- Closing note -->
         <div class="fade-up py-10 md:py-12">
           <div class="border border-dashed border-hairline rounded-sm px-8 py-10 text-center max-w-md mx-auto">
-            <p class="text-sm text-ink-muted">More case studies coming soon.</p>
-            <p class="mt-2 text-sm text-ink-muted">Most of our work is shared by referral.</p>
+            <p class="text-sm text-ink-muted">Much of my work stays under NDA and is shared by referral.</p>
+            <p class="mt-2 text-sm text-ink-muted">Happy to walk through the details on a call.</p>
             <a href="/contact.html" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-ink transition-colors duration-150 group">
               Start a conversation
               <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +218,7 @@
             Have a problem that looks like these?
           </h2>
           <p class="mt-5 text-[17px] text-void-muted leading-relaxed">
-            Tell us what you're dealing with. We'll respond with an honest take on whether and how we can help.
+            Tell me what you're dealing with. I'll respond with an honest take on whether and how I can help.
           </p>
           <a href="/contact.html" class="mt-8 inline-flex items-center gap-2 text-[15px] font-medium text-void-text border border-void-text/25 px-6 py-3 rounded-[3px] hover:border-void-brand hover:text-void-brand transition-all duration-200 group">
             Get in touch
