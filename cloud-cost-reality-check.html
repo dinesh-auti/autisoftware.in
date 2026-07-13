@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Cost Reality Check — Auti</title>
+  <meta name="description" content="Ten honest questions to find out whether you're in control of your cloud spend — or quietly bleeding money. Covers cost visibility, waste, commitments, and Kubernetes efficiency (Karpenter, rightsizing). Free, no email.">
+  <meta property="og:title" content="Cloud Cost Reality Check — Auti">
+  <meta property="og:description" content="Ten honest questions to find out whether you're in control of your cloud spend — or quietly bleeding money. Free, no email required.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autisoftware.in/cloud-cost-reality-check.html">
+  <link rel="preload" href="/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <style>
+    /* Quiz-specific interactive styling (independent of Tailwind JIT) */
+    .cc-opt { cursor: pointer; transition: border-color .15s ease, background-color .15s ease; }
+    .cc-opt:hover { border-color: #d6d1c9; }
+    .cc-opt.is-selected { border-color: #B45309; background-color: #FEF3C7; }
+    .cc-opt input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .cc-radio { position: relative; }
+    .cc-radio::after {
+      content: ""; position: absolute; inset: 3px; border-radius: 9999px;
+      background: #B45309; transform: scale(0); transition: transform .15s ease;
+    }
+    .cc-opt.is-selected .cc-radio { border-color: #B45309; }
+    .cc-opt.is-selected .cc-radio::after { transform: scale(1); }
+    #cc-submit:disabled { opacity: .35; cursor: not-allowed; }
+  </style>
+</head>
+<body class="bg-canvas text-ink">
+
+  <!-- ─── NAV ─── -->
+  <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-hairline">
+    <nav class="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] hover:opacity-70 transition-opacity duration-150"><span class="text-brand">Au</span><span class="text-ink">ti</span></a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="/work.html"    class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Work</a></li>
+        <li><a href="/about.html"   class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">About</a></li>
+        <li><a href="/cloud-cost-reality-check.html" class="text-sm text-ink font-medium">Reality Check</a></li>
+        <li><a href="/contact.html" class="text-sm text-ink-muted hover:text-ink transition-colors duration-150">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="/contact.html" class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-brand border border-brand/40 px-4 py-2 rounded-[3px] hover:bg-brand hover:text-white hover:border-brand transition-all duration-200">
+          Get in touch
+        </a>
+        <button id="menu-toggle" class="md:hidden p-2 -mr-1 text-ink-muted hover:text-ink" aria-label="Toggle menu">
+          <svg id="icon-open"  class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-hairline bg-canvas">
+      <div class="max-w-[1100px] mx-auto px-6 py-5 flex flex-col gap-1">
+        <a href="/work.html"    class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Work</a>
+        <a href="/about.html"   class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">About</a>
+        <a href="/cloud-cost-reality-check.html" class="text-sm text-ink font-medium py-2.5 border-b border-hairline">Reality Check</a>
+        <a href="/contact.html" class="text-sm text-ink-muted hover:text-ink py-2.5 border-b border-hairline">Contact</a>
+        <a href="/contact.html" class="mt-3 inline-flex items-center justify-center text-sm font-medium text-brand border border-brand/40 px-4 py-2.5 rounded-[3px] hover:bg-brand hover:text-white transition-all duration-200">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-12 md:pb-16">
+      <div class="max-w-2xl fade-up">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand mb-6">Reality Check · Free · No email</p>
+        <h1 class="text-4xl md:text-[64px] font-bold tracking-[-0.02em] leading-[1.05] text-ink">
+          Cloud Cost<br>Reality Check.
+        </h1>
+        <p class="mt-7 text-lg md:text-xl text-ink-muted leading-relaxed">
+          Ten honest questions to find out whether you're in control of your cloud spend — or quietly bleeding money. No signup, no email. Just the truth, a score out of 30, and exactly where to look next.
+        </p>
+        <p class="mt-6 text-sm text-ink-muted">
+          Covers cost visibility, waste, purchasing, and Kubernetes efficiency (Karpenter, rightsizing). ~2 minutes.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── QUIZ ─── -->
+    <section id="cc-quiz-top" class="border-t border-hairline bg-white">
+      <div class="max-w-[820px] mx-auto px-6 py-16 md:py-20">
+        <form id="cc-quiz" class="space-y-12">
+
+          <!-- Q1 -->
+          <div class="fade-up" role="group" aria-labelledby="q1-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">01</span>
+              <h2 id="q1-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">Can you attribute cloud spend to a specific team, service, or product?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q1" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">No — we see one big monthly bill and little else.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q1" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Roughly — by pulling the console or CUR by hand when someone asks.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q1" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">By account or project, but not down to service or team.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q1" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Yes — broken down by team, service, and product in a dashboard anyone can open.</span></label>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="fade-up" role="group" aria-labelledby="q2-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">02</span>
+              <h2 id="q2-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">Do you know what it costs to serve one customer, tenant, or unit of work?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q2" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">No idea — we've never calculated it.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q2" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We could estimate it, but it isn't tracked.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q2" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We track a rough cost-per-customer at the company level.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q2" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Yes — cost per tenant/unit is tracked, trended, and informs real decisions.</span></label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="fade-up" role="group" aria-labelledby="q3-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">03</span>
+              <h2 id="q3-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">How consistently are your cloud resources tagged for cost allocation?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q3" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Tagging is ad hoc or nonexistent.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q3" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Some resources are tagged; there's no standard or enforcement.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q3" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We have a tagging standard, but coverage has real gaps.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q3" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Standardized and enforced in CI/policy — untagged resources get flagged or blocked.</span></label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="fade-up" role="group" aria-labelledby="q4-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">04</span>
+              <h2 id="q4-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">How would you find out about a sudden cost spike?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q4" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">When the invoice arrives at month end.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q4" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">If someone happens to notice it in the console.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q4" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We have basic budget alerts on the total bill.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q4" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Automated anomaly detection alerts the owning team within hours, per service.</span></label>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="fade-up" role="group" aria-labelledby="q5-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">05</span>
+              <h2 id="q5-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">Can you predict next quarter's cloud spend?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q5" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">No — the bill is a monthly surprise.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q5" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We extrapolate last month and hope.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q5" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We forecast at a high level, with meaningful variance.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q5" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We forecast by workload with good accuracy and track forecast vs actual.</span></label>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="fade-up" role="group" aria-labelledby="q6-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">06</span>
+              <h2 id="q6-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">How much of your steady-state compute runs on discounted pricing — spot, Graviton/ARM, Savings Plans or RIs?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q6" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">All on-demand, x86 — we've never optimized purchasing.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q6" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">A little — set up once and never revisited.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q6" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We use Savings Plans/RIs, but coverage and spot adoption are patchy.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q6" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Commitment coverage is managed continuously; spot and Graviton used wherever they fit.</span></label>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="fade-up" role="group" aria-labelledby="q7-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">07</span>
+              <h2 id="q7-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">What's the state of idle and over-provisioned resources — instances, volumes, old snapshots?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q7" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We don't look — things get created and never cleaned up.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q7" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We clean up occasionally, usually when the bill hurts.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q7" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">We review rightsizing periodically, mostly by hand.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q7" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Idle and oversized resources are surfaced automatically and rightsized as routine.</span></label>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="fade-up" role="group" aria-labelledby="q8-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">08</span>
+              <h2 id="q8-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">How do your Kubernetes clusters provision and scale nodes?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q8" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Fixed node groups sized for peak — lots of idle capacity.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q8" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Cluster Autoscaler with static instance types and little tuning.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q8" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Autoscaling with some instance diversity, but limited consolidation.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q8" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Karpenter (or equivalent) with consolidation, mixed instance types, and spot — nodes bin-pack to real demand.</span></label>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="fade-up" role="group" aria-labelledby="q9-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">09</span>
+              <h2 id="q9-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">How well are your pod resource requests and limits set?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q9" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Guesses or copy-pasted — a big gap between requests and actual usage.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q9" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Set once at deploy and rarely revisited.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q9" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Reviewed occasionally using usage metrics.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q9" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Right-sized from real usage (VPA/recommendations); requests track consumption, HPA where it fits.</span></label>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="fade-up" role="group" aria-labelledby="q10-label">
+            <div class="flex gap-3 items-start mb-4">
+              <span class="text-sm font-bold text-brand tabular-nums mt-1">10</span>
+              <h2 id="q10-label" class="text-lg md:text-xl font-bold text-ink tracking-[-0.015em]">Who owns cloud cost, and when is it considered?</h2>
+            </div>
+            <div class="space-y-3 md:pl-8">
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q10" value="0"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">No one really — it's finance's problem, after the fact.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q10" value="1"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">An ops/infra person watches it, but it isn't an engineering concern.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q10" value="2"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">Engineering is aware; cost comes up in reviews after spend grows.</span></label>
+              <label class="cc-opt flex items-start gap-3 p-4 bg-white border border-hairline rounded-[3px]"><input type="radio" name="q10" value="3"><span class="cc-radio mt-0.5 w-4 h-4 rounded-full border border-hairline flex-shrink-0"></span><span class="text-sm text-ink leading-relaxed">An explicit engineering concern — weighed at design and PR time, with clear ownership.</span></label>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Submit -->
+        <div class="mt-12 pt-8 border-t border-hairline flex flex-col sm:flex-row sm:items-center gap-4">
+          <button type="button" id="cc-submit" class="inline-flex items-center justify-center gap-2 text-[15px] font-medium text-white bg-brand px-7 py-3 rounded-[3px] hover:opacity-90 transition-opacity duration-200 group" style="cursor:pointer" disabled>
+            See my result
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+          <span id="cc-hint" class="text-sm text-ink-muted"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RESULT ─── -->
+    <section id="cc-result" class="hidden border-t border-hairline bg-void scroll-mt-20">
+      <div class="max-w-[820px] mx-auto px-6 py-16 md:py-20">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-void-brand mb-6">Your result</p>
+        <div class="flex items-end gap-3">
+          <span id="cc-score" class="text-[64px] md:text-[88px] font-extrabold leading-none text-void-text tracking-[-0.04em]">0</span>
+          <span class="text-xl text-void-muted mb-2 font-semibold">/ 30</span>
+        </div>
+        <h2 id="cc-band" class="mt-6 text-[28px] md:text-[40px] font-extrabold tracking-[-0.02em] leading-[1.1] text-void-brand"></h2>
+        <p id="cc-blurb" class="mt-5 text-lg text-void-muted leading-relaxed max-w-xl"></p>
+
+        <div id="cc-gaps" class="mt-10 pt-8 border-t border-void-mid hidden">
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-void-muted mb-4">Your biggest gaps</p>
+          <ul id="cc-gap-list" class="space-y-2.5"></ul>
+        </div>
+
+        <div class="mt-12 flex flex-wrap items-center gap-5">
+          <a href="/contact.html" class="inline-flex items-center gap-2 text-[15px] font-medium text-void bg-void-brand px-7 py-3 rounded-[3px] hover:opacity-90 transition-opacity duration-200 group">
+            Talk through your result
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="https://calendly.com/dinesh-auti-autisoftware/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[15px] font-medium text-void-text border border-void-text/25 px-6 py-3 rounded-[3px] hover:border-void-brand hover:text-void-brand transition-all duration-200">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Book a call
+          </a>
+          <button type="button" id="cc-restart" class="text-sm text-void-muted hover:text-void-text transition-colors duration-150" style="cursor:pointer">Start over</button>
+        </div>
+
+        <p class="mt-8 text-xs text-void-muted max-w-xl leading-relaxed">
+          Nothing you entered leaves your browser — this runs entirely on your device, with no tracking and no email.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-canvas border-t border-hairline">
+    <div class="max-w-[1100px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+      <div>
+        <a href="/" class="font-heading text-xl font-extrabold tracking-[-0.03em] text-ink">Auti</a>
+        <p class="mt-1 text-xs text-ink-muted">© <span id="footer-year"></span> Auti Software Consultancy Services</p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5">
+        <a href="/work.html"           class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Work</a>
+        <a href="/about.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">About</a>
+        <a href="/cloud-cost-reality-check.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Reality Check</a>
+        <a href="/contact.html"        class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Contact</a>
+        <a href="/open-source.html"    class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Open Source</a>
+        <a href="/for-partners.html"   class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">For Partners</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <a href="/privacy-policy.html" class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Privacy</a>
+        <a href="/terms.html"          class="text-xs text-ink-muted hover:text-ink transition-colors duration-150">Terms</a>
+        <span class="text-ink-muted/30 hidden md:block" aria-hidden="true">|</span>
+        <span class="text-xs text-ink-muted">India 🇮🇳</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+    // ─── Mobile nav ───
+    const toggle    = document.getElementById('menu-toggle');
+    const menu      = document.getElementById('mobile-menu');
+    const iconOpen  = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    toggle?.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+
+    // ─── Scroll animations ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ─── Quiz logic ───
+    (function () {
+      const NAMES = [
+        "Cost visibility & allocation",
+        "Unit economics",
+        "Tagging discipline",
+        "Anomaly detection & alerting",
+        "Forecasting",
+        "Commitment & purchasing",
+        "Cloud rightsizing (idle & oversized)",
+        "Kubernetes node efficiency (Karpenter)",
+        "Kubernetes workload rightsizing",
+        "Cost ownership & culture"
+      ];
+      const TOTAL_Q = NAMES.length;
+      const form      = document.getElementById('cc-quiz');
+      const submitBtn = document.getElementById('cc-submit');
+      const hint      = document.getElementById('cc-hint');
+      const result    = document.getElementById('cc-result');
+
+      const BANDS = [
+        {
+          max: 12,
+          label: "Flying on trust, not numbers.",
+          blurb: "You're making real decisions against a bill you only see after the money's gone. The upside: the fastest wins in cloud cost live exactly here — visibility, allocation, and a few obvious sources of waste. Teams at this stage routinely cut 20–40% without touching a single feature."
+        },
+        {
+          max: 21,
+          label: "You can see it, but you don't yet control it.",
+          blurb: "You know roughly where the money goes — but seeing isn't the same as controlling. Spend is still largely reactive: you catch waste after it happens, not before. The next step-change is in allocation discipline, commitments, and Kubernetes efficiency."
+        },
+        {
+          max: 30,
+          label: "Cost is a decision, not a bill.",
+          blurb: "You treat cost as an engineering decision rather than a monthly surprise — which already puts you ahead of most teams. From here the work is at the margins: tighter Kubernetes bin-packing, commitment coverage, and sharper unit economics. Often worth a second opinion to find the last 10–15%."
+        }
+      ];
+
+      function answeredCount() {
+        let n = 0;
+        for (let i = 1; i <= TOTAL_Q; i++) {
+          if (form.querySelector('input[name="q' + i + '"]:checked')) n++;
+        }
+        return n;
+      }
+
+      function refresh() {
+        const left = TOTAL_Q - answeredCount();
+        submitBtn.disabled = left > 0;
+        hint.textContent = left > 0
+          ? left + ' question' + (left === 1 ? '' : 's') + ' left'
+          : 'All 10 answered — see your result.';
+      }
+
+      form.addEventListener('change', (e) => {
+        const name = e.target.name;
+        if (!name || name[0] !== 'q') return;
+        form.querySelectorAll('input[name="' + name + '"]').forEach(inp => {
+          inp.closest('.cc-opt').classList.toggle('is-selected', inp.checked);
+        });
+        refresh();
+      });
+
+      submitBtn.addEventListener('click', () => {
+        if (answeredCount() < TOTAL_Q) return;
+        const scores = [];
+        for (let i = 1; i <= TOTAL_Q; i++) {
+          scores.push(parseInt(form.querySelector('input[name="q' + i + '"]:checked').value, 10));
+        }
+        const total = scores.reduce((a, b) => a + b, 0);
+        const band = BANDS.find(b => total <= b.max);
+
+        document.getElementById('cc-score').textContent = total;
+        document.getElementById('cc-band').textContent = band.label;
+        document.getElementById('cc-blurb').textContent = band.blurb;
+
+        // Weakest areas: lowest-scoring dimensions
+        const ranked = scores.map((s, i) => ({ s: s, name: NAMES[i] })).sort((a, b) => a.s - b.s);
+        let gaps = ranked.filter(r => r.s <= 1).slice(0, 3);
+        if (gaps.length < 2) gaps = ranked.filter(r => r.s < 3).slice(0, 3);
+
+        const gapWrap = document.getElementById('cc-gaps');
+        const gapList = document.getElementById('cc-gap-list');
+        if (gaps.length) {
+          gapList.innerHTML = gaps.map(g =>
+            '<li class="flex items-start gap-2.5 text-void-text">' +
+            '<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-void-brand flex-shrink-0"></span>' +
+            '<span class="text-[15px]">' + g.name + '</span></li>'
+          ).join('');
+          gapWrap.classList.remove('hidden');
+        } else {
+          gapWrap.classList.add('hidden');
+        }
+
+        result.classList.remove('hidden');
+        result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      document.getElementById('cc-restart').addEventListener('click', () => {
+        form.reset();
+        form.querySelectorAll('.cc-opt').forEach(o => o.classList.remove('is-selected'));
+        result.classList.add('hidden');
+        refresh();
+        document.getElementById('cc-quiz-top').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      refresh();
+    })();
+  </script>
+</body>
+</html>
